@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Artist List</h2>
+    <br>
+    <table class="model_table">
+        {% if artist_list %}
+            <tr>
+                <th>Artist Name</th>
+            </tr>
+            {% for artist in artist_list %}
+                <tr>
+                    <td><a title='{{ artist.name }} Detail Page'
+                           href='/musicAPP/artists/{{ artist.pk }}'> {{ artist.name }} </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </table>
+{% endblock %}

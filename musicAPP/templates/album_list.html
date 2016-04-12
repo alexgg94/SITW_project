@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Album List</h2>
+    <br>
+    <table class="model_table">
+        {% if album_list %}
+            <tr>
+                <th>Album Name</th>
+            </tr>
+            {% for album in album_list %}
+                <tr>
+                    <td><a title='{{ album.name }} Detail Page'
+                           href='/mymusic/albums/{{ album.pk }}'> {{ album.name }} </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </table>
+{% endblock %}

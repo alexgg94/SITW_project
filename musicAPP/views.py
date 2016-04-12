@@ -36,6 +36,7 @@ class ConnegResponseMixin(TemplateResponseMixin):
 
 class ArtistList(ListView, ConnegResponseMixin):
     model = Artist
+    template_name = 'artist_list.html'
 
     def get_queryset(self):
         return Artist.objects.filter(artist=self.kwargs['pk'])
@@ -51,6 +52,7 @@ class ArtistDetail(DetailView, ConnegResponseMixin):
 
 class AlbumList(ListView, ConnegResponseMixin):
     model = Album
+    template_name = 'album_list.html'
 
     def get_queryset(self):
         return Album.objects.filter(album=self.kwargs['pk'])
@@ -66,6 +68,7 @@ class AlbumDetail(DetailView, ConnegResponseMixin):
 
 class TrackList(ListView, ConnegResponseMixin):
     model = Track
+    template_name = 'track_list.html'
 
     def get_queryset(self):
         return Track.objects.filter(track=self.kwargs['pk'])

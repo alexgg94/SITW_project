@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Track List</h2>
+    <br>
+    <table class="model_table">
+        {% if track_list %}
+            <tr>
+                <th>Track Name</th>
+            </tr>
+            {% for track in track_list %}
+                <tr>
+                    <td><a title='{{ track.name }} Detail Page'
+                           href='/musicAPP/tracks/{{ track.pk }}'> {{ track.name }} </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </table>
+{% endblock %}
