@@ -1,0 +1,1640 @@
+[
+  {
+    "fields": {
+      "name": "Amy Perez",
+      "popularity": 71,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd52e1cd1bc6136dea07"
+    },
+    "model": "musicAPP.artist",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "name": "Neal James",
+      "popularity": 60,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd52f77b8d1127683e97"
+    },
+    "model": "musicAPP.artist",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "name": "Bright Valentine",
+      "popularity": 57,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd523c44fc99a4400644"
+    },
+    "model": "musicAPP.artist",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "name": "Alyson Rosa",
+      "popularity": 69,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd520adb3d2aaa94c3a8"
+    },
+    "model": "musicAPP.artist",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "name": "Shelton Cortez",
+      "popularity": 15,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd52ac19e1269e81002a"
+    },
+    "model": "musicAPP.artist",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "name": "Carmela Carey",
+      "popularity": 73,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd52a61e1452dce059bc"
+    },
+    "model": "musicAPP.artist",
+    "pk": 6
+  },
+  {
+    "fields": {
+      "name": "Pitts Dean",
+      "popularity": 59,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd520dce1164128b6f11"
+    },
+    "model": "musicAPP.artist",
+    "pk": 7
+  },
+  {
+    "fields": {
+      "name": "Hawkins Sparks",
+      "popularity": 7,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd526bc9e081e70bfebd"
+    },
+    "model": "musicAPP.artist",
+    "pk": 8
+  },
+  {
+    "fields": {
+      "name": "Helen Dunn",
+      "popularity": 78,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd524016346467963614"
+    },
+    "model": "musicAPP.artist",
+    "pk": 9
+  },
+  {
+    "fields": {
+      "name": "Letha Manning",
+      "popularity": 61,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd52f2fa7a0493530fe7"
+    },
+    "model": "musicAPP.artist",
+    "pk": 10
+  },
+  {
+    "fields": {
+      "name": "Denise Johns",
+      "popularity": 48,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd5259e83bd6274d4557"
+    },
+    "model": "musicAPP.artist",
+    "pk": 11
+  },
+  {
+    "fields": {
+      "name": "Bray Rodriquez",
+      "popularity": 96,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd524ed9ec05d893353e"
+    },
+    "model": "musicAPP.artist",
+    "pk": 12
+  },
+  {
+    "fields": {
+      "name": "Deloris Galloway",
+      "popularity": 91,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd5283812eeec68c623d"
+    },
+    "model": "musicAPP.artist",
+    "pk": 13
+  },
+  {
+    "fields": {
+      "name": "Holden Daniel",
+      "popularity": 39,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd52b1be2887b5eb8bc7"
+    },
+    "model": "musicAPP.artist",
+    "pk": 14
+  },
+  {
+    "fields": {
+      "name": "Bradshaw Sandoval",
+      "popularity": 71,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd527fa749d9f1466438"
+    },
+    "model": "musicAPP.artist",
+    "pk": 15
+  },
+  {
+    "fields": {
+      "name": "Aline Whitley",
+      "popularity": 34,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd52811e635fe73172f3"
+    },
+    "model": "musicAPP.artist",
+    "pk": 16
+  },
+  {
+    "fields": {
+      "name": "Townsend Roth",
+      "popularity": 43,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd52079921f2831c9c9f"
+    },
+    "model": "musicAPP.artist",
+    "pk": 17
+  },
+  {
+    "fields": {
+      "name": "Riggs Mayo",
+      "popularity": 64,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd52013729c0177e92e2"
+    },
+    "model": "musicAPP.artist",
+    "pk": 18
+  },
+  {
+    "fields": {
+      "name": "Ellis Hickman",
+      "popularity": 51,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd52802d138aa1ad905f"
+    },
+    "model": "musicAPP.artist",
+    "pk": 19
+  },
+  {
+    "fields": {
+      "name": "Rosalinda Farmer",
+      "popularity": 37,
+      "spotifyLink": "https://open.spotify.com/artist/570cdd5296ba47e55060ac37"
+    },
+    "model": "musicAPP.artist",
+    "pk": 20
+  },
+  {
+    "fields": {
+      "releaseDate": "2016-02-09",
+      "artists": [
+        8
+      ],
+      "name": "Bluegrain",
+      "spotifyLink": "https://open.spotify.com/album/570cde25a9fea3dfb1194c3e"
+    },
+    "model": "musicAPP.album",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-04-27",
+      "artists": [
+        11,
+        5
+      ],
+      "name": "Eschoir",
+      "spotifyLink": "https://open.spotify.com/album/570cde25e8b46900ac87f810"
+    },
+    "model": "musicAPP.album",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-08-30",
+      "artists": [
+        5,
+        19,
+        18
+      ],
+      "name": "Applica",
+      "spotifyLink": "https://open.spotify.com/album/570cde2597c16d1f899bbc76"
+    },
+    "model": "musicAPP.album",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-10-12",
+      "artists": [
+        15,
+        7,
+        7,
+        3
+      ],
+      "name": "Isonus",
+      "spotifyLink": "https://open.spotify.com/album/570cde25b520b474d5392361"
+    },
+    "model": "musicAPP.album",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "releaseDate": "2016-02-08",
+      "artists": [
+        11,
+        8
+      ],
+      "name": "Geekwagon",
+      "spotifyLink": "https://open.spotify.com/album/570cde2543bd6469a7f4ad5b"
+    },
+    "model": "musicAPP.album",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "releaseDate": "2016-02-26",
+      "artists": [
+        20
+      ],
+      "name": "Dymi",
+      "spotifyLink": "https://open.spotify.com/album/570cde2526ae0c63c7cba0e8"
+    },
+    "model": "musicAPP.album",
+    "pk": 6
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-02-27",
+      "artists": [
+        13,
+        7,
+        18
+      ],
+      "name": "Tri@Tribalog",
+      "spotifyLink": "https://open.spotify.com/album/570cde252f50d5e99c6b5505"
+    },
+    "model": "musicAPP.album",
+    "pk": 7
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-09-02",
+      "artists": [
+        15,
+        9,
+        8,
+        6
+      ],
+      "name": "Ultrasure",
+      "spotifyLink": "https://open.spotify.com/album/570cde2548c9ddabe3fca73d"
+    },
+    "model": "musicAPP.album",
+    "pk": 8
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-08-09",
+      "artists": [
+        3,
+        3,
+        18,
+        16
+      ],
+      "name": "Zilch",
+      "spotifyLink": "https://open.spotify.com/album/570cde25dd8cd05bb2d7e2b9"
+    },
+    "model": "musicAPP.album",
+    "pk": 9
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-02-18",
+      "artists": [
+        18,
+        8
+      ],
+      "name": "Ecratic",
+      "spotifyLink": "https://open.spotify.com/album/570cde251d50ffd3245bbd90"
+    },
+    "model": "musicAPP.album",
+    "pk": 10
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-08-26",
+      "artists": [
+        7,
+        13,
+        4
+      ],
+      "name": "Mangelica",
+      "spotifyLink": "https://open.spotify.com/album/570cde2526d1bb75458eb614"
+    },
+    "model": "musicAPP.album",
+    "pk": 11
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-08-21",
+      "artists": [
+        8,
+        17
+      ],
+      "name": "Ceprene",
+      "spotifyLink": "https://open.spotify.com/album/570cde25ec53a61cf499bb53"
+    },
+    "model": "musicAPP.album",
+    "pk": 12
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-01-26",
+      "artists": [
+        8,
+        17,
+        20,
+        20
+      ],
+      "name": "Zanymax",
+      "spotifyLink": "https://open.spotify.com/album/570cde25edade8af0b4fe8ae"
+    },
+    "model": "musicAPP.album",
+    "pk": 13
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-06-14",
+      "artists": [
+        11,
+        20,
+        11,
+        9
+      ],
+      "name": "Momentia",
+      "spotifyLink": "https://open.spotify.com/album/570cde25c9cd36d5cf35353d"
+    },
+    "model": "musicAPP.album",
+    "pk": 14
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-05-10",
+      "artists": [
+        17,
+        19
+      ],
+      "name": "Portaline",
+      "spotifyLink": "https://open.spotify.com/album/570cde251e45e3e248407754"
+    },
+    "model": "musicAPP.album",
+    "pk": 15
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-11-28",
+      "artists": [
+        16,
+        10
+      ],
+      "name": "Zoinage",
+      "spotifyLink": "https://open.spotify.com/album/570cde25ba00c051b9fc0b44"
+    },
+    "model": "musicAPP.album",
+    "pk": 16
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-02-16",
+      "artists": [
+        10,
+        11,
+        14
+      ],
+      "name": "Ozean",
+      "spotifyLink": "https://open.spotify.com/album/570cde250c63d71a188ab850"
+    },
+    "model": "musicAPP.album",
+    "pk": 17
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-03-16",
+      "artists": [
+        14,
+        4,
+        15
+      ],
+      "name": "Injoy",
+      "spotifyLink": "https://open.spotify.com/album/570cde2505da5c2f6f38e2a0"
+    },
+    "model": "musicAPP.album",
+    "pk": 18
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-01-06",
+      "artists": [
+        3,
+        9,
+        14
+      ],
+      "name": "Toyletry",
+      "spotifyLink": "https://open.spotify.com/album/570cde25907e8d33bf6a1136"
+    },
+    "model": "musicAPP.album",
+    "pk": 19
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-09-22",
+      "artists": [
+        9,
+        3,
+        1,
+        7
+      ],
+      "name": "Turnabout",
+      "spotifyLink": "https://open.spotify.com/album/570cde254d66ba1328775975"
+    },
+    "model": "musicAPP.album",
+    "pk": 20
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-01-29",
+      "artists": [
+        8,
+        8
+      ],
+      "name": "Digirang",
+      "spotifyLink": "https://open.spotify.com/album/570cde25c760414eeb82e7d4"
+    },
+    "model": "musicAPP.album",
+    "pk": 21
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-09-09",
+      "artists": [
+        5,
+        13,
+        11
+      ],
+      "name": "Synkgen",
+      "spotifyLink": "https://open.spotify.com/album/570cde25d1cefd36c1743a0e"
+    },
+    "model": "musicAPP.album",
+    "pk": 22
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-02-17",
+      "artists": [
+        17,
+        3
+      ],
+      "name": "Architax",
+      "spotifyLink": "https://open.spotify.com/album/570cde2548c7844f33a9bff4"
+    },
+    "model": "musicAPP.album",
+    "pk": 23
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-07-08",
+      "artists": [
+        18,
+        9
+      ],
+      "name": "Extremo",
+      "spotifyLink": "https://open.spotify.com/album/570cde2572d1ec476d7ae0b2"
+    },
+    "model": "musicAPP.album",
+    "pk": 24
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-03-29",
+      "artists": [
+        11,
+        4
+      ],
+      "name": "Zerbina",
+      "spotifyLink": "https://open.spotify.com/album/570cde25bdf7f52bcc229f92"
+    },
+    "model": "musicAPP.album",
+    "pk": 25
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-09-29",
+      "artists": [
+        16,
+        4,
+        3,
+        20
+      ],
+      "name": "Envire",
+      "spotifyLink": "https://open.spotify.com/album/570cde258c6c885dbe8aa838"
+    },
+    "model": "musicAPP.album",
+    "pk": 26
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-10-16",
+      "artists": [
+        9,
+        15,
+        16
+      ],
+      "name": "Geoform",
+      "spotifyLink": "https://open.spotify.com/album/570cde257b8777250d55090f"
+    },
+    "model": "musicAPP.album",
+    "pk": 27
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-11-10",
+      "artists": [
+        4
+      ],
+      "name": "Isis",
+      "spotifyLink": "https://open.spotify.com/album/570cde256571fa4bef06133d"
+    },
+    "model": "musicAPP.album",
+    "pk": 28
+  },
+  {
+    "fields": {
+      "releaseDate": "2015-07-17",
+      "artists": [
+        3
+      ],
+      "name": "Speedbolt",
+      "spotifyLink": "https://open.spotify.com/album/570cde25da5f9a0035334a5e"
+    },
+    "model": "musicAPP.album",
+    "pk": 29
+  },
+  {
+    "fields": {
+      "releaseDate": "2016-01-03",
+      "artists": [
+        1,
+        11,
+        1
+      ],
+      "name": "Elita",
+      "spotifyLink": "https://open.spotify.com/album/570cde257912d4651dde08c4"
+    },
+    "model": "musicAPP.album",
+    "pk": 30
+  },
+  {
+    "fields": {
+      "album": 3,
+      "artists": [
+        4
+      ],
+      "name": "Plasmos",
+      "spotifyLink": "https://open.spotify.com/album/570cde52e4f81b0aec54e7d1"
+    },
+    "model": "musicAPP.track",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "album": 1,
+      "artists": [
+        4,
+        2,
+        2
+      ],
+      "name": "Kiggle",
+      "spotifyLink": "https://open.spotify.com/album/570cde5252a68a5dfd2fcc40"
+    },
+    "model": "musicAPP.track",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "album": 4,
+      "artists": [
+        2,
+        5
+      ],
+      "name": "Zillacom",
+      "spotifyLink": "https://open.spotify.com/album/570cde521218ac84ff79fcc0"
+    },
+    "model": "musicAPP.track",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "album": 2,
+      "artists": [
+        3
+      ],
+      "name": "Imkan",
+      "spotifyLink": "https://open.spotify.com/album/570cde5236d1bbb88f2a483d"
+    },
+    "model": "musicAPP.track",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "album": 6,
+      "artists": [
+        2
+      ],
+      "name": "Exovent",
+      "spotifyLink": "https://open.spotify.com/album/570cde52d4dfd91a6c90725f"
+    },
+    "model": "musicAPP.track",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "album": 4,
+      "artists": [
+        2,
+        7
+      ],
+      "name": "Endipin",
+      "spotifyLink": "https://open.spotify.com/album/570cde527162b2ed6ff94cb2"
+    },
+    "model": "musicAPP.track",
+    "pk": 6
+  },
+  {
+    "fields": {
+      "album": 2,
+      "artists": [
+        1,
+        5
+      ],
+      "name": "Netropic",
+      "spotifyLink": "https://open.spotify.com/album/570cde520acf97d9a20f7e55"
+    },
+    "model": "musicAPP.track",
+    "pk": 7
+  },
+  {
+    "fields": {
+      "album": 6,
+      "artists": [
+        1,
+        3,
+        1
+      ],
+      "name": "Octocore",
+      "spotifyLink": "https://open.spotify.com/album/570cde52485dc0b4f5be7717"
+    },
+    "model": "musicAPP.track",
+    "pk": 8
+  },
+  {
+    "fields": {
+      "album": 4,
+      "artists": [
+        6
+      ],
+      "name": "Hopeli",
+      "spotifyLink": "https://open.spotify.com/album/570cde52c620feb36e1eb6f4"
+    },
+    "model": "musicAPP.track",
+    "pk": 9
+  },
+  {
+    "fields": {
+      "album": 3,
+      "artists": [
+        5,
+        6
+      ],
+      "name": "Aclima",
+      "spotifyLink": "https://open.spotify.com/album/570cde52df1b756b832f3c14"
+    },
+    "model": "musicAPP.track",
+    "pk": 10
+  },
+  {
+    "fields": {
+      "album": 4,
+      "artists": [
+        1,
+        6,
+        2
+      ],
+      "name": "Optyk",
+      "spotifyLink": "https://open.spotify.com/album/570cde52c4a88473f855fcab"
+    },
+    "model": "musicAPP.track",
+    "pk": 11
+  },
+  {
+    "fields": {
+      "album": 2,
+      "artists": [
+        4,
+        2,
+        1
+      ],
+      "name": "Ovium",
+      "spotifyLink": "https://open.spotify.com/album/570cde528f8947fd6b1ee001"
+    },
+    "model": "musicAPP.track",
+    "pk": 12
+  },
+  {
+    "fields": {
+      "album": 7,
+      "artists": [
+        3,
+        6
+      ],
+      "name": "Tingles",
+      "spotifyLink": "https://open.spotify.com/album/570cde52cd6d7e7b3dbcf17e"
+    },
+    "model": "musicAPP.track",
+    "pk": 13
+  },
+  {
+    "fields": {
+      "album": 7,
+      "artists": [
+        6,
+        5
+      ],
+      "name": "Virxo",
+      "spotifyLink": "https://open.spotify.com/album/570cde52ac37cd2e27b4a776"
+    },
+    "model": "musicAPP.track",
+    "pk": 14
+  },
+  {
+    "fields": {
+      "album": 2,
+      "artists": [
+        3,
+        4,
+        3
+      ],
+      "name": "Eplode",
+      "spotifyLink": "https://open.spotify.com/album/570cde52a8204115d66017c9"
+    },
+    "model": "musicAPP.track",
+    "pk": 15
+  },
+  {
+    "fields": {
+      "album": 4,
+      "artists": [
+        7,
+        4,
+        7
+      ],
+      "name": "Lumbrex",
+      "spotifyLink": "https://open.spotify.com/album/570cde526618b15d02d7f57d"
+    },
+    "model": "musicAPP.track",
+    "pk": 16
+  },
+  {
+    "fields": {
+      "album": 1,
+      "artists": [
+        5,
+        5,
+        5
+      ],
+      "name": "Silodyne",
+      "spotifyLink": "https://open.spotify.com/album/570cde524919c243c0be65ea"
+    },
+    "model": "musicAPP.track",
+    "pk": 17
+  },
+  {
+    "fields": {
+      "album": 6,
+      "artists": [
+        5,
+        7,
+        4
+      ],
+      "name": "Fleetmix",
+      "spotifyLink": "https://open.spotify.com/album/570cde5281543a7c645d0965"
+    },
+    "model": "musicAPP.track",
+    "pk": 18
+  },
+  {
+    "fields": {
+      "album": 6,
+      "artists": [
+        7
+      ],
+      "name": "Idego",
+      "spotifyLink": "https://open.spotify.com/album/570cde525ac69e3e8f707367"
+    },
+    "model": "musicAPP.track",
+    "pk": 19
+  },
+  {
+    "fields": {
+      "album": 4,
+      "artists": [
+        2
+      ],
+      "name": "Opticall",
+      "spotifyLink": "https://open.spotify.com/album/570cde52922c16dc6e98b8c4"
+    },
+    "model": "musicAPP.track",
+    "pk": 20
+  },
+  {
+    "fields": {
+      "album": 7,
+      "artists": [
+        7
+      ],
+      "name": "Insuresys",
+      "spotifyLink": "https://open.spotify.com/album/570cde52aa23a9d9c8188d5a"
+    },
+    "model": "musicAPP.track",
+    "pk": 21
+  },
+  {
+    "fields": {
+      "album": 4,
+      "artists": [
+        1,
+        7,
+        6
+      ],
+      "name": "Exoteric",
+      "spotifyLink": "https://open.spotify.com/album/570cde5277fd7a14cd347f1e"
+    },
+    "model": "musicAPP.track",
+    "pk": 22
+  },
+  {
+    "fields": {
+      "album": 7,
+      "artists": [
+        2
+      ],
+      "name": "Memora",
+      "spotifyLink": "https://open.spotify.com/album/570cde52fc1adc276897eff4"
+    },
+    "model": "musicAPP.track",
+    "pk": 23
+  },
+  {
+    "fields": {
+      "album": 3,
+      "artists": [
+        7,
+        1,
+        1
+      ],
+      "name": "Valreda",
+      "spotifyLink": "https://open.spotify.com/album/570cde522180a7a00e27fa45"
+    },
+    "model": "musicAPP.track",
+    "pk": 24
+  },
+  {
+    "fields": {
+      "album": 1,
+      "artists": [
+        6,
+        6
+      ],
+      "name": "Cinaster",
+      "spotifyLink": "https://open.spotify.com/album/570cde52550c8bf7983cf7bf"
+    },
+    "model": "musicAPP.track",
+    "pk": 25
+  },
+  {
+    "fields": {
+      "album": 6,
+      "artists": [
+        5,
+        6
+      ],
+      "name": "Tsunamia",
+      "spotifyLink": "https://open.spotify.com/album/570cde5288daedb9cfdba984"
+    },
+    "model": "musicAPP.track",
+    "pk": 26
+  },
+  {
+    "fields": {
+      "album": 6,
+      "artists": [
+        2,
+        3
+      ],
+      "name": "Accusage",
+      "spotifyLink": "https://open.spotify.com/album/570cde52d43b278c25d72018"
+    },
+    "model": "musicAPP.track",
+    "pk": 27
+  },
+  {
+    "fields": {
+      "album": 1,
+      "artists": [
+        2,
+        2
+      ],
+      "name": "Songlines",
+      "spotifyLink": "https://open.spotify.com/album/570cde5219c0679dac93f3aa"
+    },
+    "model": "musicAPP.track",
+    "pk": 28
+  },
+  {
+    "fields": {
+      "album": 7,
+      "artists": [
+        2,
+        6,
+        6
+      ],
+      "name": "Genmom",
+      "spotifyLink": "https://open.spotify.com/album/570cde529d404edfb48bd585"
+    },
+    "model": "musicAPP.track",
+    "pk": 29
+  },
+  {
+    "fields": {
+      "album": 7,
+      "artists": [
+        7,
+        1
+      ],
+      "name": "Aquafire",
+      "spotifyLink": "https://open.spotify.com/album/570cde52e5ccb42fe0483558"
+    },
+    "model": "musicAPP.track",
+    "pk": 30
+  },
+  {
+    "fields": {
+      "album": 5,
+      "artists": [
+        4,
+        5
+      ],
+      "name": "Biolive",
+      "spotifyLink": "https://open.spotify.com/album/570cde525320864e3fdec5b8"
+    },
+    "model": "musicAPP.track",
+    "pk": 31
+  },
+  {
+    "fields": {
+      "album": 6,
+      "artists": [
+        5,
+        2
+      ],
+      "name": "Zogak",
+      "spotifyLink": "https://open.spotify.com/album/570cde52190a435f53c811a2"
+    },
+    "model": "musicAPP.track",
+    "pk": 32
+  },
+  {
+    "fields": {
+      "album": 1,
+      "artists": [
+        3
+      ],
+      "name": "Eplosion",
+      "spotifyLink": "https://open.spotify.com/album/570cde526d2eaab8ba180eb4"
+    },
+    "model": "musicAPP.track",
+    "pk": 33
+  },
+  {
+    "fields": {
+      "album": 2,
+      "artists": [
+        3,
+        7
+      ],
+      "name": "Acruex",
+      "spotifyLink": "https://open.spotify.com/album/570cde52c29c2c941a80cbaa"
+    },
+    "model": "musicAPP.track",
+    "pk": 34
+  },
+  {
+    "fields": {
+      "album": 5,
+      "artists": [
+        5
+      ],
+      "name": "Egypto",
+      "spotifyLink": "https://open.spotify.com/album/570cde5284537fb401ddc4b0"
+    },
+    "model": "musicAPP.track",
+    "pk": 35
+  },
+  {
+    "fields": {
+      "album": 6,
+      "artists": [
+        1,
+        4
+      ],
+      "name": "Ovolo",
+      "spotifyLink": "https://open.spotify.com/album/570cde52fedae9f4b268298b"
+    },
+    "model": "musicAPP.track",
+    "pk": 36
+  },
+  {
+    "fields": {
+      "album": 5,
+      "artists": [
+        1,
+        1,
+        6
+      ],
+      "name": "Kneedles",
+      "spotifyLink": "https://open.spotify.com/album/570cde5293cd6789e3fd176e"
+    },
+    "model": "musicAPP.track",
+    "pk": 37
+  },
+  {
+    "fields": {
+      "album": 7,
+      "artists": [
+        6,
+        2,
+        2
+      ],
+      "name": "Protodyne",
+      "spotifyLink": "https://open.spotify.com/album/570cde52fecc511bc7bcb9de"
+    },
+    "model": "musicAPP.track",
+    "pk": 38
+  },
+  {
+    "fields": {
+      "album": 4,
+      "artists": [
+        6,
+        2
+      ],
+      "name": "Zytrax",
+      "spotifyLink": "https://open.spotify.com/album/570cde52f908af196d5a646e"
+    },
+    "model": "musicAPP.track",
+    "pk": 39
+  },
+  {
+    "fields": {
+      "album": 4,
+      "artists": [
+        5,
+        6,
+        2
+      ],
+      "name": "Xyqag",
+      "spotifyLink": "https://open.spotify.com/album/570cde520b7187da771957b7"
+    },
+    "model": "musicAPP.track",
+    "pk": 40
+  },
+  {
+    "fields": {
+      "album": 7,
+      "artists": [
+        4,
+        6
+      ],
+      "name": "Cubicide",
+      "spotifyLink": "https://open.spotify.com/album/570cde52465f68cd4d8a4e28"
+    },
+    "model": "musicAPP.track",
+    "pk": 41
+  },
+  {
+    "fields": {
+      "album": 4,
+      "artists": [
+        1,
+        7
+      ],
+      "name": "Insurety",
+      "spotifyLink": "https://open.spotify.com/album/570cde5298acb0624430c72d"
+    },
+    "model": "musicAPP.track",
+    "pk": 42
+  },
+  {
+    "fields": {
+      "album": 7,
+      "artists": [
+        1
+      ],
+      "name": "Cormoran",
+      "spotifyLink": "https://open.spotify.com/album/570cde5286c4d78561a5ba82"
+    },
+    "model": "musicAPP.track",
+    "pk": 43
+  },
+  {
+    "fields": {
+      "album": 5,
+      "artists": [
+        4,
+        5
+      ],
+      "name": "Retrotex",
+      "spotifyLink": "https://open.spotify.com/album/570cde52b69d336256d3fbfa"
+    },
+    "model": "musicAPP.track",
+    "pk": 44
+  },
+  {
+    "fields": {
+      "album": 2,
+      "artists": [
+        5,
+        4
+      ],
+      "name": "Phormula",
+      "spotifyLink": "https://open.spotify.com/album/570cde52f70ef5e8e3d4e10c"
+    },
+    "model": "musicAPP.track",
+    "pk": 45
+  },
+  {
+    "fields": {
+      "album": 7,
+      "artists": [
+        6,
+        1,
+        1
+      ],
+      "name": "Waterbaby",
+      "spotifyLink": "https://open.spotify.com/album/570cde52d17770004cb1b7c7"
+    },
+    "model": "musicAPP.track",
+    "pk": 46
+  },
+  {
+    "fields": {
+      "album": 7,
+      "artists": [
+        2,
+        1
+      ],
+      "name": "Anarco",
+      "spotifyLink": "https://open.spotify.com/album/570cde52a6abb38af233c5b0"
+    },
+    "model": "musicAPP.track",
+    "pk": 47
+  },
+  {
+    "fields": {
+      "album": 3,
+      "artists": [
+        2,
+        6
+      ],
+      "name": "Apextri",
+      "spotifyLink": "https://open.spotify.com/album/570cde52724c457447a39ecb"
+    },
+    "model": "musicAPP.track",
+    "pk": 48
+  },
+  {
+    "fields": {
+      "album": 7,
+      "artists": [
+        1,
+        1,
+        5
+      ],
+      "name": "Confrenzy",
+      "spotifyLink": "https://open.spotify.com/album/570cde522cf4918cbc112b30"
+    },
+    "model": "musicAPP.track",
+    "pk": 49
+  },
+  {
+    "fields": {
+      "album": 2,
+      "artists": [
+        4,
+        4,
+        5
+      ],
+      "name": "Orboid",
+      "spotifyLink": "https://open.spotify.com/album/570cde52a65a6a74b6083ad1"
+    },
+    "model": "musicAPP.track",
+    "pk": 50
+  },
+  {
+    "fields": {
+      "album": 2,
+      "artists": [
+        2,
+        1
+      ],
+      "name": "Freakin",
+      "spotifyLink": "https://open.spotify.com/album/570cde52b82a73d07fe8cc7a"
+    },
+    "model": "musicAPP.track",
+    "pk": 51
+  },
+  {
+    "fields": {
+      "album": 1,
+      "artists": [
+        7,
+        1
+      ],
+      "name": "Limage",
+      "spotifyLink": "https://open.spotify.com/album/570cde52451c7f6915653080"
+    },
+    "model": "musicAPP.track",
+    "pk": 52
+  },
+  {
+    "fields": {
+      "album": 2,
+      "artists": [
+        3
+      ],
+      "name": "Exposa",
+      "spotifyLink": "https://open.spotify.com/album/570cde52850ced9bfa7475a1"
+    },
+    "model": "musicAPP.track",
+    "pk": 53
+  },
+  {
+    "fields": {
+      "album": 2,
+      "artists": [
+        2
+      ],
+      "name": "Parcoe",
+      "spotifyLink": "https://open.spotify.com/album/570cde52dac22ccaf0f30e59"
+    },
+    "model": "musicAPP.track",
+    "pk": 54
+  },
+  {
+    "fields": {
+      "album": 5,
+      "artists": [
+        4,
+        3,
+        2
+      ],
+      "name": "Quonk",
+      "spotifyLink": "https://open.spotify.com/album/570cde52941d1b259189b97d"
+    },
+    "model": "musicAPP.track",
+    "pk": 55
+  },
+  {
+    "fields": {
+      "album": 1,
+      "artists": [
+        4,
+        1,
+        2
+      ],
+      "name": "Zilidium",
+      "spotifyLink": "https://open.spotify.com/album/570cde52f0e70852818ba616"
+    },
+    "model": "musicAPP.track",
+    "pk": 56
+  },
+  {
+    "fields": {
+      "album": 2,
+      "artists": [
+        5,
+        1,
+        5
+      ],
+      "name": "Medcom",
+      "spotifyLink": "https://open.spotify.com/album/570cde52b278e97c9b90e316"
+    },
+    "model": "musicAPP.track",
+    "pk": 57
+  },
+  {
+    "fields": {
+      "album": 4,
+      "artists": [
+        4,
+        1,
+        3
+      ],
+      "name": "Biohab",
+      "spotifyLink": "https://open.spotify.com/album/570cde52b045e858bc82d61f"
+    },
+    "model": "musicAPP.track",
+    "pk": 58
+  },
+  {
+    "fields": {
+      "album": 1,
+      "artists": [
+        7
+      ],
+      "name": "Geekko",
+      "spotifyLink": "https://open.spotify.com/album/570cde529e0946cd5948e43d"
+    },
+    "model": "musicAPP.track",
+    "pk": 59
+  },
+  {
+    "fields": {
+      "album": 3,
+      "artists": [
+        1
+      ],
+      "name": "Liquidoc",
+      "spotifyLink": "https://open.spotify.com/album/570cde5263cba59a9b6de3df"
+    },
+    "model": "musicAPP.track",
+    "pk": 60
+  },
+  {
+    "fields": {
+      "album": 5,
+      "artists": [
+        5,
+        6
+      ],
+      "name": "Obliq",
+      "spotifyLink": "https://open.spotify.com/album/570cde529b626e581c3fe278"
+    },
+    "model": "musicAPP.track",
+    "pk": 61
+  },
+  {
+    "fields": {
+      "album": 4,
+      "artists": [
+        1,
+        3,
+        1
+      ],
+      "name": "Tasmania",
+      "spotifyLink": "https://open.spotify.com/album/570cde52b10fa6a8eef6de7e"
+    },
+    "model": "musicAPP.track",
+    "pk": 62
+  },
+  {
+    "fields": {
+      "album": 4,
+      "artists": [
+        5,
+        3,
+        3
+      ],
+      "name": "Acumentor",
+      "spotifyLink": "https://open.spotify.com/album/570cde52a5e0e8f33ecc4693"
+    },
+    "model": "musicAPP.track",
+    "pk": 63
+  },
+  {
+    "fields": {
+      "album": 1,
+      "artists": [
+        3,
+        4,
+        2
+      ],
+      "name": "Bizmatic",
+      "spotifyLink": "https://open.spotify.com/album/570cde52f72bfeaa62f53b20"
+    },
+    "model": "musicAPP.track",
+    "pk": 64
+  },
+  {
+    "fields": {
+      "album": 1,
+      "artists": [
+        5,
+        2,
+        1
+      ],
+      "name": "Prismatic",
+      "spotifyLink": "https://open.spotify.com/album/570cde523a65eb160a88ead6"
+    },
+    "model": "musicAPP.track",
+    "pk": 65
+  },
+  {
+    "fields": {
+      "album": 7,
+      "artists": [
+        5
+      ],
+      "name": "Flyboyz",
+      "spotifyLink": "https://open.spotify.com/album/570cde52b7ae1ca4c6011184"
+    },
+    "model": "musicAPP.track",
+    "pk": 66
+  },
+  {
+    "fields": {
+      "album": 6,
+      "artists": [
+        4
+      ],
+      "name": "Kongle",
+      "spotifyLink": "https://open.spotify.com/album/570cde52adf2f1ca953ef084"
+    },
+    "model": "musicAPP.track",
+    "pk": 67
+  },
+  {
+    "fields": {
+      "album": 7,
+      "artists": [
+        2
+      ],
+      "name": "Dogtown",
+      "spotifyLink": "https://open.spotify.com/album/570cde524001ede9f1f1abec"
+    },
+    "model": "musicAPP.track",
+    "pk": 68
+  },
+  {
+    "fields": {
+      "album": 4,
+      "artists": [
+        7,
+        3
+      ],
+      "name": "Techade",
+      "spotifyLink": "https://open.spotify.com/album/570cde5209aa076d087ccb9c"
+    },
+    "model": "musicAPP.track",
+    "pk": 69
+  },
+  {
+    "fields": {
+      "album": 5,
+      "artists": [
+        2,
+        2,
+        6
+      ],
+      "name": "Vertide",
+      "spotifyLink": "https://open.spotify.com/album/570cde522d744c2cfd6b66e5"
+    },
+    "model": "musicAPP.track",
+    "pk": 70
+  },
+  {
+    "fields": {
+      "album": 1,
+      "artists": [
+        3,
+        3
+      ],
+      "name": "Calcu",
+      "spotifyLink": "https://open.spotify.com/album/570cde52361af5896c2e4d21"
+    },
+    "model": "musicAPP.track",
+    "pk": 71
+  },
+  {
+    "fields": {
+      "album": 6,
+      "artists": [
+        7,
+        7
+      ],
+      "name": "Scenty",
+      "spotifyLink": "https://open.spotify.com/album/570cde522cb74365f9d70f51"
+    },
+    "model": "musicAPP.track",
+    "pk": 72
+  },
+  {
+    "fields": {
+      "album": 4,
+      "artists": [
+        4
+      ],
+      "name": "Medesign",
+      "spotifyLink": "https://open.spotify.com/album/570cde52c54dbd8b127f6799"
+    },
+    "model": "musicAPP.track",
+    "pk": 73
+  },
+  {
+    "fields": {
+      "album": 7,
+      "artists": [
+        4
+      ],
+      "name": "Webiotic",
+      "spotifyLink": "https://open.spotify.com/album/570cde5229a568fea7110fb8"
+    },
+    "model": "musicAPP.track",
+    "pk": 74
+  },
+  {
+    "fields": {
+      "album": 4,
+      "artists": [
+        7,
+        4
+      ],
+      "name": "Lotron",
+      "spotifyLink": "https://open.spotify.com/album/570cde52159f4bf6666b3826"
+    },
+    "model": "musicAPP.track",
+    "pk": 75
+  },
+  {
+    "fields": {
+      "album": 5,
+      "artists": [
+        4,
+        2,
+        5
+      ],
+      "name": "Visualix",
+      "spotifyLink": "https://open.spotify.com/album/570cde525d47dd9d414300eb"
+    },
+    "model": "musicAPP.track",
+    "pk": 76
+  },
+  {
+    "fields": {
+      "album": 7,
+      "artists": [
+        2,
+        7
+      ],
+      "name": "Comdom",
+      "spotifyLink": "https://open.spotify.com/album/570cde5243db59a78a6eff31"
+    },
+    "model": "musicAPP.track",
+    "pk": 77
+  },
+  {
+    "fields": {
+      "album": 3,
+      "artists": [
+        3,
+        7,
+        4
+      ],
+      "name": "Geekola",
+      "spotifyLink": "https://open.spotify.com/album/570cde524eeaf05697212f3c"
+    },
+    "model": "musicAPP.track",
+    "pk": 78
+  },
+  {
+    "fields": {
+      "album": 5,
+      "artists": [
+        2,
+        5,
+        1
+      ],
+      "name": "Orbean",
+      "spotifyLink": "https://open.spotify.com/album/570cde520df327f45bf06294"
+    },
+    "model": "musicAPP.track",
+    "pk": 79
+  },
+  {
+    "fields": {
+      "album": 3,
+      "artists": [
+        5,
+        1
+      ],
+      "name": "Proxsoft",
+      "spotifyLink": "https://open.spotify.com/album/570cde529318d6bd558d4dbc"
+    },
+    "model": "musicAPP.track",
+    "pk": 80
+  }
+]
