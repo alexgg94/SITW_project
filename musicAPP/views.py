@@ -9,8 +9,8 @@ from django.views.generic import DetailView, ListView
 from django.views.generic.base import TemplateResponseMixin
 from django.views.generic.edit import CreateView
 
-import models
-import forms
+from models import *
+from forms import *
 
 class ConnegResponseMixin(TemplateResponseMixin):
 
@@ -38,9 +38,6 @@ class ArtistList(ListView, ConnegResponseMixin):
     model = Artist
     template_name = 'artist_list.html'
 
-    def get_queryset(self):
-        return Artist.objects.filter(artist=self.kwargs['pk'])
-
 class ArtistDetail(DetailView, ConnegResponseMixin):
     model = Artist
     template_name = 'artist_detail.html'
@@ -54,9 +51,6 @@ class AlbumList(ListView, ConnegResponseMixin):
     model = Album
     template_name = 'album_list.html'
 
-    def get_queryset(self):
-        return Album.objects.filter(album=self.kwargs['pk'])
-
 class AlbumDetail(DetailView, ConnegResponseMixin):
     model = Album
     template_name = 'album_detail.html'
@@ -69,9 +63,6 @@ class AlbumDetail(DetailView, ConnegResponseMixin):
 class TrackList(ListView, ConnegResponseMixin):
     model = Track
     template_name = 'track_list.html'
-
-    def get_queryset(self):
-        return Track.objects.filter(track=self.kwargs['pk'])
 
 class TrackDetail(DetailView, ConnegResponseMixin):
     model = Track

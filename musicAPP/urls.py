@@ -3,14 +3,14 @@ from django.core.urlresolvers import reverse_lazy
 from django.views.generic import UpdateView
 from django.views.generic.base import RedirectView
 
-import models
-import forms
-import views
+from models import *
+from forms import *
+from views import *
 
 urlpatterns = patterns('',
     # Home page
     url(r'^$',
-        RedirectView.as_view(url=reverse_lazy('artist_list', kwargs={'extension': 'html'})),
+        RedirectView.as_view(url=reverse_lazy('musicapp:artist_list', kwargs={'extension': 'html'})),
         name='home_page'),
 
     # List artists: /musicAPP/artists.json
