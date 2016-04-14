@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if track %}
+    <h1>{{ track.name }}</h1>
+    <h2>Artists:<br>{% for artist in track.artists.all %} <p style="text-indent: 1cm;">
+      <a href='/musicAPP/artists/{{ artist.pk }}.html'>{{artist.name}}</a></p>
+      {% endfor %} </h2>
+    <h2>Album: <a href='/musicAPP/albums/{{ track.album.pk }}.html'>{{ track.album.name }}</a></h2>
+    <h2>Spotify Link: <a title='{{ track.spotifyLink }} Link'
+           href='{{ track.spotifyLink }}'> {{ track.spotifyLink }} </a></h2>
+
+{% endif %}
+{% endblock %}

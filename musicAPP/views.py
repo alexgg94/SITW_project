@@ -44,6 +44,7 @@ class ArtistDetail(DetailView, ConnegResponseMixin):
 
     def get_context_data(self, **kwargs):
         context = super(ArtistDetail, self).get_context_data(**kwargs)
+        context["albums"] = Album.objects.filter(artists=self.get_object())
         context['RATING_CHOICES'] = ArtistReview.RATING_CHOICES
         return context
 
@@ -57,6 +58,7 @@ class AlbumDetail(DetailView, ConnegResponseMixin):
 
     def get_context_data(self, **kwargs):
         context = super(AlbumDetail, self).get_context_data(**kwargs)
+        context["tracks"] = Track.objects.filter(album=self.get_object())
         context['RATING_CHOICES'] = AlbumReview.RATING_CHOICES
         return context
 

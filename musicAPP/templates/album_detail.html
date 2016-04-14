@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if album %}
+    <h1>{{ album.name }}</h1>
+    <h2>Artists:<br>{% for artist in album.artists.all %} <p style="text-indent: 1cm;">
+      <a href='/musicAPP/artists/{{ artist.pk }}.html'>{{artist.name}}</a></p>
+      {% endfor %} </h2>
+    <h2>Release Date: {{ album.releaseDate }}</h2>
+    <h2>Spotify Link: <a title='{{ album.spotifyLink }} Link'
+           href='{{ album.spotifyLink }}'> {{ album.spotifyLink }} </a></h2>
+    <p class="tracks_table">
+          {% if tracks %}
+            <tr>
+                <h2>Albums' tracks</h2>
+            </tr>
+
+            {% for track in tracks %}
+                <tr>
+                    <td><a title='{{ track.name }} Detail Page'
+                           href='/musicAPP/tracks/{{ track.pk }}.html'> {{ track.name }} </a>
+                    </td><br>
+                </tr>
+            {% endfor %}
+          {% else %}
+            <tr> This album doesn't have tracks</tr>
+          {% endif %}
+
+    </p>
+{% endif %}
+{% endblock %}

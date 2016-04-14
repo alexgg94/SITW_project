@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{ artist.name }}</h1>
+    <h2>Popularity: {{ artist.popularity }}</h2>
+    <h2>Spotify Link: <a title='{{ artist.spotifyLink }} Link'
+           href='{{ artist.spotifyLink }}'> {{ artist.spotifyLink }} </a></h2>
+    <p class="albums_table">
+           {% if albums %}
+             <tr>
+                 <h2>Artist's Albums</h2>
+             </tr>
+
+             {% for album in albums %}
+                 <tr>
+                     <td><a title='{{ album.name }} Detail Page'
+                            href='/musicAPP/albums/{{ album.pk }}.html'> {{ album.name }} </a>
+                     </td><br>
+                 </tr>
+             {% endfor %}
+           {% else %}
+             <tr> This artist doesn't have albums</tr>
+           {% endif %}
+
+    </p>
+{% endblock %}
