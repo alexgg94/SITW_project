@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Sign in to your musicAPP account</h2>
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+
+    <div id="login_div">
+
+        <form class="login_form" method="post">
+            <table>
+                <tr>
+                    <td>{{ form.username.label_tag }}</td>
+                    <td>{{ form.username }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.password.label_tag }}</td>
+                    <td>{{ form.password }}</td>
+                </tr>
+            </table>
+
+            <input class="submit_butt" type="submit" value="Sign In"/>
+            <input type="hidden" name="next" value="/musicAPP"/>
+            {% csrf_token %}
+        </form>
+    </div>
+{% endblock %}

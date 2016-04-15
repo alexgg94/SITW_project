@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, url
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import UpdateView
-from django.views.generic.base import RedirectView
+from django.views.generic.base import RedirectView, TemplateView
 
 from models import *
 from forms import *
@@ -10,7 +10,7 @@ from views import *
 urlpatterns = patterns('',
     # Home page
     url(r'^$',
-        RedirectView.as_view(url=reverse_lazy('musicapp:artist_list', kwargs={'extension': 'html'})),
+        TemplateView.as_view(template_name="home_page.html"),
         name='home_page'),
 
     # List artists: /musicAPP/artists.json
@@ -44,5 +44,11 @@ urlpatterns = patterns('',
     url(r'^tracks/(?P<pk>\d+)\.(?P<extension>(json|xml|html))$',
         TrackDetail.as_view(),
         name='track_detail'),
+
+    # User login: /musicAPP/login
+    url(r'^login$', 'django.contrib.auth.views.login', name='login'),
+
+    # User logout: /musicAPP/logout
+    url(r'^logout$', 'django.contrib.auth.views.logout', {'next_page': '/musicAPP'}),
 
 )
