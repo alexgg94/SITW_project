@@ -28,6 +28,14 @@ urlpatterns = patterns('',
         CreateArtist.as_view(),
         name='createArtist'),
 
+    # Edit Artist, ex.: /musicAPP/artists/1/edit.html
+    url(r'^artists/(?P<pk>\d+)/edit.html$',
+        UpdateView.as_view(
+            model=Artist,
+            template_name = "form.html",
+            form_class = ArtistForm),
+        name='artist_edit'),
+
     # List albums: /musicAPP/albums.json
     url(r'^albums\.(?P<extension>(json|xml|html))$',
         AlbumList.as_view(),
@@ -43,6 +51,14 @@ urlpatterns = patterns('',
         CreateAlbum.as_view(),
         name='createAlbum'),
 
+    # Edit Album, ex.: /musicAPP/albums/1/edit.html
+    url(r'^albums/(?P<pk>\d+)/edit.html$',
+        UpdateView.as_view(
+            model=Album,
+            template_name = "form.html",
+            form_class = AlbumForm),
+        name='album_edit'),
+
     # List tracks: /musicAPP/tracks.json
     url(r'^tracks\.(?P<extension>(json|xml|html))$',
         TrackList.as_view(),
@@ -57,6 +73,14 @@ urlpatterns = patterns('',
     url(r'^tracks/create.html',
         CreateTrack.as_view(),
         name='createTrack'),
+
+    # Edit Track, ex.: /musicAPP/tracks/1/edit.html
+    url(r'^tracks/(?P<pk>\d+)/edit.html$',
+        UpdateView.as_view(
+            model=Track,
+            template_name = "form.html",
+            form_class = TrackForm),
+        name='track_edit'),
 
     # User login: /musicAPP/login
     url(r'^login$', 'django.contrib.auth.views.login', name='login'),

@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
+{% if user.is_authenticated and album.user == user or user.is_superuser %}
+  <button type='submit' onclick="window.location.href='/musicAPP/albums/{{ album.pk }}/edit.html'">Edit</button>
+{% endif %}
 {% if album %}
     <h1>{{ album.name }}</h1>
     <h2>Artists:<br>{% for artist in album.artists.all %} <p style="text-indent: 1cm;">
