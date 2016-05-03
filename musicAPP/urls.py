@@ -88,4 +88,27 @@ urlpatterns = patterns('',
     # User logout: /musicAPP/logout
     url(r'^logout$', 'django.contrib.auth.views.logout', {'next_page': '/musicAPP'}),
 
+    #RESTfull API URLs------------------------
+
+    #List Arists ex.:/api/artists/
+    url(r'^api/artists/$',
+        APIArtistList.as_view(), name='artist-list'),
+    #Arists details ex.:/api/artists/1/
+    url(r'^api/artists/(?P<pk>\d+)/$',
+        APIArtistDetail.as_view(), name='artist-detail'),
+
+    #List Albums ex.:/api/albums/
+    url(r'^api/albums/$',
+        APIAlbumList.as_view(), name='album-list'),
+    #Album details ex.:/api/albums/1/
+    url(r'^api/albums/(?P<pk>\d+)/$',
+        APIAlbumDetail.as_view(), name='album-detail'),
+
+    #List Tracks ex.:/api/tracks/
+    url(r'^api/tracks/$',
+        APITrackList.as_view(), name='track-list'),
+    #Tracks detail ex.:/api/tracks/1/
+    url(r'^api/traks/(?P<pk>\d+)/$',
+        APITrackDetail.as_view(), name='track-detail'),
+
 )

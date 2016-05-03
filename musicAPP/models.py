@@ -21,7 +21,7 @@ class Artist(models.Model):
 
 class Album(models.Model):
     name = models.CharField(max_length=100)
-    artists = models.ManyToManyField('Artist')
+    artists = models.ManyToManyField('Artist', related_name='albums')
     releaseDate = models.DateField(default=date.today)
     spotifyLink = models.URLField(blank=True, null=True)
     user = models.ForeignKey(User, default=1)
