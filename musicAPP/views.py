@@ -75,6 +75,33 @@ class TrackDetail(DetailView, ConnegResponseMixin):
         context['RATING_CHOICES'] = TrackReview.RATING_CHOICES
         return context
 
+class CreateArtist(CreateView):
+    model = Artist
+    template_name = 'form.html'
+    form_class = ArtistForm
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(CreateArtist, self).form_valid(form)
+
+class CreateAlbum(CreateView):
+    model = Album
+    template_name = 'form.html'
+    form_class = AlbumForm
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(CreateAlbum, self).form_valid(form)
+
+class CreateTrack(CreateView):
+    model = Track
+    template_name = 'form.html'
+    form_class = TrackForm
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(CreateTrack, self).form_valid(form)
+
 """
 def review(request, pk):
     restaurant = get_object_or_404(Restaurant, pk=pk)

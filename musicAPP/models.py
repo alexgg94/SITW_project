@@ -1,26 +1,35 @@
 from django.db import models
+from django.contrib.auth.models import User
 from datetime import date
+from django.core.urlresolvers import reverse
 
 # Create your models here.
 class Artist(models.Model):
 
     name = models.CharField(max_length=50, null=False)
+    country = models.CharField(max_length=50, null=False, default='USA')
     popularity = models.IntegerField(blank=True)
     spotifyLink = models.URLField(blank=True, null=True)
+    user = models.ForeignKey(User, default=1)
     #image = models.ImageField()
 
     def __unicode__(self):
         return u"%s" % self.name
+    def get_absolute_url(self):
+        return reverse('musicapp:artist_detail', kwargs={'pk': self.pk, 'extension': 'html'})
 
 
 class Album(models.Model):
     name = models.CharField(max_length=100)
     artists = models.ManyToManyField('Artist')
-    releaseDate = models.DateField()
+    releaseDate = models.DateField(default=date.today)
     spotifyLink = models.URLField(blank=True, null=True)
+    user = models.ForeignKey(User, default=1)
 
     def __unicode__(self):
         return u"%s" % self.name
+    def get_absolute_url(self):
+        return reverse('musicapp:album_detail', kwargs={'pk': self.pk, 'extension': 'html'})
 
 
 class Track(models.Model):
@@ -28,9 +37,12 @@ class Track(models.Model):
     artists = models.ManyToManyField('Artist')
     album = models.ForeignKey('Album')# o varios albums
     spotifyLink = models.URLField(blank=True, null=True)
+    user = models.ForeignKey(User, default=1)
 
     def __unicode__(self):
         return u"%s" % self.name
+    def get_absolute_url(self):
+        return reverse('musicapp:track_detail', kwargs={'pk': self.pk, 'extension': 'html'})
 
 
 class Review(models.Model):
@@ -38,6 +50,7 @@ class Review(models.Model):
     rating = models.PositiveSmallIntegerField('Ratings (stars)', blank=False, default=3, choices=RATING_CHOICES)
     comment = models.TextField(blank=True, null=True)
     date = models.DateField(default=date.today)
+    user = models.ForeignKey(User, default=1)
 
 
 class ArtistReview(Review):

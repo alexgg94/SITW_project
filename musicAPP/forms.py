@@ -4,14 +4,14 @@ from models import *
 class ArtistForm(ModelForm):
     class Meta:
         model = Artist
-        exclude = ('spotifyLink',)
+        exclude = ('spotifyLink','user',)
 
 class AlbumForm(ModelForm):
     class Meta:
         model = Album
-        exclude = ('spotifyLink',)
+        exclude = ('spotifyLink','user',)
 
 class TrackForm(ModelForm):
     class Meta:
         model = Track
-        exclude = ('spotifyLink',)
+        exclude = ('spotifyLink','user',)

@@ -23,6 +23,10 @@ urlpatterns = patterns('',
         ArtistDetail.as_view(),
         name='artist_detail'),
 
+    # Create an Artist,  ex.: /musicAPP/artists/create
+    url(r'^artists/create.html',
+        CreateArtist.as_view(),
+        name='createArtist'),
 
     # List albums: /musicAPP/albums.json
     url(r'^albums\.(?P<extension>(json|xml|html))$',
@@ -34,6 +38,10 @@ urlpatterns = patterns('',
         AlbumDetail.as_view(),
         name='album_detail'),
 
+    # Create an album,  ex.: /musicAPP/albums/create
+    url(r'^albums/create.html',
+        CreateAlbum.as_view(),
+        name='createAlbum'),
 
     # List tracks: /musicAPP/tracks.json
     url(r'^tracks\.(?P<extension>(json|xml|html))$',
@@ -44,6 +52,11 @@ urlpatterns = patterns('',
     url(r'^tracks/(?P<pk>\d+)\.(?P<extension>(json|xml|html))$',
         TrackDetail.as_view(),
         name='track_detail'),
+
+    # Create a Track,  ex.: /musicAPP/tracks/create
+    url(r'^tracks/create.html',
+        CreateTrack.as_view(),
+        name='createTrack'),
 
     # User login: /musicAPP/login
     url(r'^login$', 'django.contrib.auth.views.login', name='login'),
