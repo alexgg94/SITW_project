@@ -89,7 +89,9 @@ urlpatterns = patterns('',
     url(r'^logout$', 'django.contrib.auth.views.logout', {'next_page': '/musicAPP'}),
 
     #RESTfull API URLs------------------------
-
+    url(r'api/$',
+        TemplateView.as_view(template_name="home_page_api.html"),
+        name='home_page_api'),
     #List Arists ex.:/api/artists/
     url(r'^api/artists/$',
         APIArtistList.as_view(), name='artist-list'),
