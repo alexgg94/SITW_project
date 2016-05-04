@@ -9,8 +9,11 @@ from django.views.generic import DetailView, ListView
 from django.views.generic.base import TemplateResponseMixin
 from django.views.generic.edit import CreateView
 
+from rest_framework import generics, permissions
+
 from models import *
 from forms import *
+from serializers import *
 
 class ConnegResponseMixin(TemplateResponseMixin):
 
@@ -113,3 +116,50 @@ def review(request, pk):
     review.save()
     return HttpResponseRedirect(reverse('myrestaurants:restaurant_detail', args=(restaurant.id,)))
 """
+
+# RESTfull API views-----------------
+class IsOwnerOrReadOnly(permissions.BasePermission):
+
+    def has_object_permission(self, request, view, obj):
+        # Read permissions are allowed to any request,
+        # so we'll always allow GET, HEAD or OPTIONS requests.
+        if request.method in permissions.SAFE_METHODS:
+            return True
+        # Instance must have an attribute named `owner`.
+        return obj.user == request.user
+
+class APIArtistList(generics.ListCreateAPIView):
+    permission_classes = (IsOwnerOrReadOnly,)
+    model = Artist
+    queryset = Artist.objects.all()
+    serializer_class = ArtistSerializer
+
+class APIArtistDetail(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = (IsOwnerOrReadOnly,)
+    model = Artist
+    queryset = Artist.objects.all()
+    serializer_class = ArtistSerializer
+
+class APIAlbumList(generics.ListCreateAPIView):
+    permission_classes = (IsOwnerOrReadOnly,)
+    model = Album
+    queryset = Album.objects.all()
+    serializer_class = AlbumSerializer
+
+class APIAlbumDetail(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = (IsOwnerOrReadOnly,)
+    model = Album
+    queryset = Album.objects.all()
+    serializer_class = AlbumSerializer
+
+class APITrackList(generics.ListCreateAPIView):
+    permission_classes = (IsOwnerOrReadOnly,)
+    model = Track
+    queryset = Track.objects.all()
+    serializer_class = TrackSerializer
+
+class APITrackDetail(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = (IsOwnerOrReadOnly,)
+    model = Track
+    queryset = Track.objects.all()
+    serializer_class = TrackSerializer
