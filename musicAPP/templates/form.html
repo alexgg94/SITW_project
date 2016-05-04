@@ -1,5 +1,95 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block content %}
+
+ <script>
+         $(function() {
+             $.getJSON("{% static "countries.json" %}", {}, function (countries) {
+                 $("#id_country").autocomplete({
+                     source: countries
+                 });
+             });
+
+             $("#id_artist_name").autocomplete({
+                 source: function( request, response ) {
+                     $.ajax({
+                         url: "https://api.spotify.com/v1/search?q=" + request.term + "&type=artist",
+                         type: "GET",
+                         dataType: "json",
+
+                         success: function( data_received )
+                              {
+                                response( $.map( data_received["artists"]["items"], function( item )
+                                  {
+                                    return{value : item.name, link : item.external_urls["spotify"]}
+                                  }))
+                              }
+                     });
+                 },
+                 minLength: 2,
+                 select:	function(	event, ui	)
+                          {
+                          if	(ui.item)
+                                  {
+                                    $("#id_spotifyLink").val(ui.item.link);
+                                  }
+                         }
+             });
+
+             $("#id_album_name").autocomplete({
+                 source: function( request, response ) {
+                     $.ajax({
+                         url: "https://api.spotify.com/v1/search?q=" + request.term + "&type=album",
+                         type: "GET",
+                         dataType: "json",
+
+                         success: function( data_received )
+                              {
+                                response( $.map( data_received["albums"]["items"], function( item )
+                                  {
+                                    return{value : item.name, link : item.external_urls["spotify"]}
+                                  }))
+                              }
+                     });
+                 },
+                 minLength: 2,
+                 select:	function(	event, ui	)
+                          {
+                          if	(ui.item)
+                                  {
+                                    $("#id_spotifyLink").val(ui.item.link);
+                                  }
+                         }
+             });
+
+             $("#id_track_name").autocomplete({
+                 source: function( request, response ) {
+                     $.ajax({
+                         url: "https://api.spotify.com/v1/search?q=" + request.term + "&type=track",
+                         type: "GET",
+                         dataType: "json",
+
+                         success: function( data_received )
+                              {
+                                response( $.map( data_received["tracks"]["items"], function( item )
+                                  {
+                                    return{value : item.name, link : item.external_urls["spotify"]}
+                                  }))
+                              }
+                     });
+                 },
+                 minLength: 2,
+                 select:	function(	event, ui	)
+                          {
+								           if	(ui.item)
+                                  {
+                                   $("#id_spotifyLink").val(ui.item.link);
+																	}
+												  }
+             });
+         });
+     </script>
+
     <form method="post" enctype="multipart/form-data" action="">
         {% csrf_token %}
         <table>

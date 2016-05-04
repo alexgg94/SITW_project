@@ -14,8 +14,8 @@
             </tr>
             {% for album in album_list %}
                 <tr>
-                    <td><a title='{{ album.name }} Detail Page'
-                           href='/musicAPP/albums/{{ album.pk }}.html'> {{ album.name }} </a>
+                    <td><a title='{{ album.album_name }} Detail Page'
+                           href='/musicAPP/albums/{{ album.pk }}.html'> {{ album.album_name }} </a>
                     </td>
                 </tr>
             {% endfor %}

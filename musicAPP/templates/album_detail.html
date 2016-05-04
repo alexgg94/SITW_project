@@ -4,9 +4,9 @@
   <button type='submit' onclick="window.location.href='/musicAPP/albums/{{ album.pk }}/edit.html'">Edit</button>
 {% endif %}
 {% if album %}
-    <h1>{{ album.name }}</h1>
+    <h1>{{ album.album_name }}</h1>
     <h2>Artists:<br>{% for artist in album.artists.all %} <p style="text-indent: 1cm;">
-      <a href='/musicAPP/artists/{{ artist.pk }}.html'>{{artist.name}}</a></p>
+      <a href='/musicAPP/artists/{{ artist.pk }}.html'>{{artist.artist_name}}</a></p>
       {% endfor %} </h2>
     <h2>Release Date: {{ album.releaseDate }}</h2>
     <h2>Spotify Link: <a title='{{ album.spotifyLink }} Link'
@@ -19,8 +19,8 @@
 
             {% for track in tracks %}
                 <tr>
-                    <td><a title='{{ track.name }} Detail Page'
-                           href='/musicAPP/tracks/{{ track.pk }}.html'> {{ track.name }} </a>
+                    <td><a title='{{ track.track_name }} Detail Page'
+                           href='/musicAPP/tracks/{{ track.pk }}.html'> {{ track.track_name }} </a>
                     </td><br>
                 </tr>
             {% endfor %}

@@ -3,7 +3,7 @@
     {% if user.is_authenticated and artist.user == user or user.is_superuser%}
       <button type='submit' onclick="window.location.href='/musicAPP/artists/{{ artist.pk }}/edit.html'">Edit</button>
     {% endif %}
-    <h1>{{ artist.name }}</h1>
+    <h1>{{ artist.artist_name }}</h1>
     <h2>Popularity: {{ artist.popularity }}</h2>
     <h2>Spotify Link: <a title='{{ artist.spotifyLink }} Link'
            href='{{ artist.spotifyLink }}'> {{ artist.spotifyLink }} </a></h2>
@@ -15,8 +15,8 @@
 
              {% for album in albums %}
                  <tr>
-                     <td><a title='{{ album.name }} Detail Page'
-                            href='/musicAPP/albums/{{ album.pk }}.html'> {{ album.name }} </a>
+                     <td><a title='{{ album.album_name }} Detail Page'
+                            href='/musicAPP/albums/{{ album.pk }}.html'> {{ album.album_name }} </a>
                      </td><br>
                  </tr>
              {% endfor %}
