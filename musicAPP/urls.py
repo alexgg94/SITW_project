@@ -108,7 +108,7 @@ urlpatterns = patterns('',
     url(r'^api/tracks/$',
         APITrackList.as_view(), name='track-list'),
     #Tracks detail ex.:/api/tracks/1/
-    url(r'^api/traks/(?P<pk>\d+)/$',
+    url(r'^api/tracks/(?P<pk>\d+)/$',
         APITrackDetail.as_view(), name='track-detail'),
 
 )

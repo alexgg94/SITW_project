@@ -35,7 +35,7 @@ class Album(models.Model):
 class Track(models.Model):
     track_name = models.CharField(max_length=50)
     artists = models.ManyToManyField('Artist')
-    album = models.ForeignKey('Album')# o varios albums
+    album = models.ForeignKey('Album')
     spotifyLink = models.URLField(blank=True, null=True)
     user = models.ForeignKey(User, default=1)
 
