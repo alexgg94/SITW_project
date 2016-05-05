@@ -8,6 +8,7 @@
     <h2>Popularity: {{ artist.popularity }}</h2>
     <h2>Spotify Link: <a title='{{ artist.spotifyLink }} Link'
            href='{{ artist.spotifyLink }}'> {{ artist.spotifyLink }} </a></h2>
+    <h2>Added by: {{ user }}</h2>
     <p class="albums_table">
            {% if albums %}
              <tr>

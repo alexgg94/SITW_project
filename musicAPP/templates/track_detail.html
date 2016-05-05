@@ -10,6 +10,6 @@
     <h2>Album: <a href='/musicAPP/albums/{{ track.album.pk }}.html'>{{ track.album.album_name }}</a></h2>
     <h2>Spotify Link: <a title='{{ track.spotifyLink }} Link'
            href='{{ track.spotifyLink }}'> {{ track.spotifyLink }} </a></h2>
-
+    <h2>Added by: {{ user }}</h2>
 {% endif %}
 {% endblock %}

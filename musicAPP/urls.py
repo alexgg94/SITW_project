@@ -37,7 +37,7 @@ urlpatterns = patterns('',
         name='artist_edit'),
 
     #Delete an Artist ex.:/musicAPP/artists/1/delete/
-    url(r'^artists/(?P<pk>\d+)/delete/$',
+    url(r'^artists/(?P<pk>\d+)/delete.html$',
     DeleteArtist.as_view(),
     name='artist_delete'),
 
@@ -65,7 +65,7 @@ urlpatterns = patterns('',
         name='album_edit'),
 
     #Delete an Album ex.:/musicAPP/albums/1/delete/
-    url(r'^albums/(?P<pk>\d+)/delete/$',
+    url(r'^albums/(?P<pk>\d+)/delete.html$',
     DeleteAlbum.as_view(),
     name='album_delete'),
 
@@ -93,7 +93,7 @@ urlpatterns = patterns('',
         name='track_edit'),
 
     #Delete an Track ex.:/musicAPP/tracks/1/delete/
-    url(r'^tracks/(?P<pk>\d+)/delete/$',
+    url(r'^tracks/(?P<pk>\d+)/delete.html$',
     DeleteTrack.as_view(),
     name='track_delete'),
 

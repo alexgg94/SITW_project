@@ -1,5 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
 {% if user.is_authenticated and track.user == user or user.is_superuser %}
-Are you sure you want to delete {{ track.track_name }}?
+    <h2>Are you sure you want to delete {{ track.track_name }}?</h2>
     <form method="post">
       {% csrf_token %}
       <button type="submit" class="btn btn-danger">Yes</button>
@@ -7,6 +9,7 @@ Are you sure you want to delete {{ track.track_name }}?
 
     </form>
 {% else %}
-    <h1>You are not the user who create this track and your user isn't is a super user.</h1>
-    <button type="button" onClick="history.back()">Go Back</button>
+    <h2>You don't have rights to access the demanded page</h2>
+    <button type='submit' onclick="window.location.href='/musicAPP'">Go Back</button>
 {% endif %}
+{% endblock %}
