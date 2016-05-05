@@ -1,0 +1,7 @@
+Are you sure youwant to delete {{ artist.artist_name }}?
+<form method="post">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger">Yes</button>
+    <button type="button" onClick="history.back()">No</button>
+
+</form>

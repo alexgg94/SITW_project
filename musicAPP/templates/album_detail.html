@@ -2,12 +2,11 @@
 {% block content %}
 {% if user.is_authenticated and album.user == user or user.is_superuser %}
   <button type='submit' onclick="window.location.href='/musicAPP/albums/{{ album.pk }}/edit.html'">Edit</button>
+  <button type='submit' onclick="window.location.href='/musicAPP/albums/{{ album.pk }}/delete/'">Delete</button>
 {% endif %}
 {% if album %}
     <h1>{{ album.album_name }}</h1>
-    <h2>Artists:<br>{% for artist in album.artists.all %} <p style="text-indent: 1cm;">
-      <a href='/musicAPP/artists/{{ artist.pk }}.html'>{{artist.artist_name}}</a></p>
-      {% endfor %} </h2>
+    <h2>Artist:<a href='/musicAPP/artists/{{ album.artists.pk }}.html'>{{ album.artists.artist_name }}</a></h2>
     <h2>Release Date: {{ album.releaseDate }}</h2>
     <h2>Spotify Link: <a title='{{ album.spotifyLink }} Link'
            href='{{ album.spotifyLink }}'> {{ album.spotifyLink }} </a></h2>

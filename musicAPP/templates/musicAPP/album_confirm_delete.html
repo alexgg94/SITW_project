@@ -1,0 +1,12 @@
+{% if user.is_authenticated and album.user == user or user.is_superuser %}
+Are you sure you want to delete {{ album.album_name }} and all his tracks?
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">Yes</button>
+      <button type="button" onClick="history.back()">No</button>
+
+    </form>
+{% else %}
+    <h1>You are not the user who create this album and your user isn't is a super user.</h1>
+    <button type="button" onClick="history.back()">Go Back</button>
+{% endif %}

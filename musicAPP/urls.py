@@ -36,6 +36,11 @@ urlpatterns = patterns('',
             form_class = ArtistForm),
         name='artist_edit'),
 
+    #Delete an Artist ex.:/musicAPP/artists/1/delete/
+    url(r'^artists/(?P<pk>\d+)/delete/$',
+    DeleteArtist.as_view(),
+    name='artist_delete'),
+
     # List albums: /musicAPP/albums.json
     url(r'^albums\.(?P<extension>(json|xml|html))$',
         AlbumList.as_view(),
@@ -59,6 +64,11 @@ urlpatterns = patterns('',
             form_class = AlbumForm),
         name='album_edit'),
 
+    #Delete an Album ex.:/musicAPP/albums/1/delete/
+    url(r'^albums/(?P<pk>\d+)/delete/$',
+    DeleteAlbum.as_view(),
+    name='album_delete'),
+
     # List tracks: /musicAPP/tracks.json
     url(r'^tracks\.(?P<extension>(json|xml|html))$',
         TrackList.as_view(),
@@ -81,6 +91,11 @@ urlpatterns = patterns('',
             template_name = "form.html",
             form_class = TrackForm),
         name='track_edit'),
+
+    #Delete an Track ex.:/musicAPP/tracks/1/delete/
+    url(r'^tracks/(?P<pk>\d+)/delete/$',
+    DeleteTrack.as_view(),
+    name='track_delete'),
 
     # User login: /musicAPP/login
     url(r'^login$', 'django.contrib.auth.views.login', name='login'),

@@ -2,10 +2,10 @@ from django.shortcuts import render
 
 from django.utils import timezone
 from django.core import serializers
-from django.core.urlresolvers import reverse
+from django.core.urlresolvers import reverse, reverse_lazy
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, ListView, DeleteView
 from django.views.generic.base import TemplateResponseMixin
 from django.views.generic.edit import CreateView
 
@@ -34,7 +34,8 @@ class ConnegResponseMixin(TemplateResponseMixin):
             if self.kwargs['extension'] == 'json':
                 return self.render_json_object_response(objects=objects)
             elif self.kwargs['extension'] == 'xml':
-                return self.render_xml_object_response(objects=objects)
+                return self.render_xml_object_response(objects=objects)            
+
         return super(ConnegResponseMixin, self).render_to_response(context)
 
 class ArtistList(ListView, ConnegResponseMixin):
@@ -104,6 +105,19 @@ class CreateTrack(CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(CreateTrack, self).form_valid(form)
+
+class DeleteArtist(DeleteView):
+    model = Artist
+    success_url = reverse_lazy('musicapp:artist_list', kwargs={'extension': 'html'})
+
+class DeleteAlbum(DeleteView):
+    model = Album
+    success_url = reverse_lazy('musicapp:artist_list', kwargs={'extension': 'html'})
+
+class DeleteTrack(DeleteView):
+    model = Track
+    success_url = reverse_lazy('musicapp:artist_list', kwargs={'extension': 'html'})
+
 
 """
 def review(request, pk):
