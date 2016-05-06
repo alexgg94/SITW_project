@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
@@ -5,20 +6,10 @@
     <title>{% block title %}musicAPP{% endblock %}</title>
 </head>
 <body>
-<div id="sidebar">
-    {% block sidebar %}<h1>Welcome to the MusicAPP</h1>
-        {% if user.is_authenticated %}
-            <ul><li>You are logged with the {{ user.username }} user!</li><a href="/musicAPP/logout"> Logout</a></ul>
-        {% else %}
-          <ul><li><a href="/musicAPP/login">Login</a></li></ul>
-        {% endif %}
-    {% endblock %}
-
-</div>
 <div id="content">
     {% block content %}
         {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-        <ul><h2><a href="/musicAPP/artists.html">Artist</a>
+        <ul><h2><a href="/musicAPP/artists.html">Artists</a>
           <a href="/musicAPP/albums.html">Albums</a>
           <a href="/musicAPP/tracks.html">Tracks</a>
           <a href="/musicAPP/api/">API</a></h2></ul>

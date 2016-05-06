@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+      <link rel="stylesheet" href="{% static "style/style.css" %}" />
       <link	rel="stylesheet"
                   href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"	/>
       <script	src="http://code.jquery.com/jquery-2.2.3.js"></script>
@@ -9,16 +10,30 @@
     <title>{% block title %}musicAPP{% endblock %}</title>
 </head>
 <body>
-<div id="sidebar">
-    {% block sidebar %}<ul><li><a href="/musicAPP">Home</a></li></ul>
-        {% if user.is_authenticated %}
-            <ul><li>You are logged with the {{ user.username }} user!</li><a href="/musicAPP/logout"> Logout</a></ul>
-        {% else %}
-          <ul><li><a href="/musicAPP/login">Login</a></li></ul>
-        {% endif %}
+
+<p>
+<div class="tooltip_top"></div>
+<div class="tooltip_con">
+  <p>
+    {% block sidebar %}
+    <button id='Home' type='submit' onclick="window.location.href='/musicAPP'">Home</button>
+    {% if user.is_authenticated %}
+    <button id='Logout' type='submit' onclick="window.location.href='/musicAPP/logout'">Logout</button>
+    {% else %}
+    <button id='Login' type='submit' onclick="window.location.href='/musicAPP/login'">Login</button>
+    {% endif %}
+    <b> User: {{ user }}</b>
+  </p>
+</div>
+</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+
     {% endblock %}
 
-</div>
 <div id="content">
     {% block content %}
         {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}

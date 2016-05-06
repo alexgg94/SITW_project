@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>Artist List</h2>
     {% if user.is_authenticated %}
         <button type='submit' onclick="window.location.href='/musicAPP/artists/create.html'">Create</button>
     {% else %}
@@ -9,9 +8,7 @@
     <br>
     <table class="model_table">
         {% if artist_list %}
-            <tr>
-                <th>Artist Name</th>
-            </tr>
+            <h3>Artists' Name</h3>
             {% for artist in artist_list %}
                 <tr>
                     <td><a title='{{ artist.artist_name }} Detail Page'

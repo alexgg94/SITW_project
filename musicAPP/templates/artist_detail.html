@@ -2,13 +2,13 @@
 {% block content %}
     {% if user.is_authenticated and artist.user == user or user.is_superuser%}
       <button type='submit' onclick="window.location.href='/musicAPP/artists/{{ artist.pk }}/edit.html'">Edit</button>
-      <button type='submit' onclick="window.location.href='/musicAPP/artists/{{ artist.pk }}/delete/'">Delete</button>
+      <button type='submit' onclick="window.location.href='/musicAPP/artists/{{ artist.pk }}/delete.html'">Delete</button>
     {% endif %}
     <h1>{{ artist.artist_name }}</h1>
     <h2>Popularity: {{ artist.popularity }}</h2>
     <h2>Spotify Link: <a title='{{ artist.spotifyLink }} Link'
            href='{{ artist.spotifyLink }}'> {{ artist.spotifyLink }} </a></h2>
-    <h2>Added by: {{ user }}</h2>
+    <h2 style="color:#b30000">Added by: {{ user }}</h2>
     <p class="albums_table">
            {% if albums %}
              <tr>

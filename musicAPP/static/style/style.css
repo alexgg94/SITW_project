@@ -1,0 +1,68 @@
+
+body {
+    background-color: #ffffff;
+}
+
+h1 {
+    color: #000000;
+    margin-left: 20px;
+}
+
+b {
+  color: #ffffff;
+  text-shadow: 1px 1px #b30000;
+}
+
+.tooltip_top{
+    width: 3000px;
+    height: 10px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #b30000;
+  }
+
+.tooltip_con{
+  width: 3000px;
+  height: 70px;
+  position: fixed;
+  top: 10px;
+  left: 0px;
+  background-color: #1e1e15;
+}
+
+#Home {
+  left: 0px;
+  top: 0px;
+  width: 84px;
+  height: 41px;
+  background: white;
+  border: 3px double #b30000;
+  color: black;
+  font-size:14px;
+  font-weight:700;
+}
+
+#Login {
+  left: 0px;
+  top: 0px;
+  width: 84px;
+  height: 41px;
+  background: white;
+  border: 3px double #b30000;
+  color: black;
+  font-size:14px;
+  font-weight:700;
+}
+
+#Logout {
+  left: 0px;
+  top: 0px;
+  width: 84px;
+  height: 41px;
+  background: white;
+  border: 3px double #b30000;
+  color: black;
+  font-size:14px;
+  font-weight:700;
+}

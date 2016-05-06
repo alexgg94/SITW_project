@@ -2,7 +2,7 @@
 {% block content %}
 {% if user.is_authenticated and album.user == user or user.is_superuser %}
   <button type='submit' onclick="window.location.href='/musicAPP/albums/{{ album.pk }}/edit.html'">Edit</button>
-  <button type='submit' onclick="window.location.href='/musicAPP/albums/{{ album.pk }}/delete/'">Delete</button>
+  <button type='submit' onclick="window.location.href='/musicAPP/albums/{{ album.pk }}/delete.html'">Delete</button>
 {% endif %}
 {% if album %}
     <h1>{{ album.album_name }}</h1>
@@ -10,7 +10,7 @@
     <h2>Release Date: {{ album.releaseDate }}</h2>
     <h2>Spotify Link: <a title='{{ album.spotifyLink }} Link'
            href='{{ album.spotifyLink }}'> {{ album.spotifyLink }} </a></h2>
-    <h2>Added by: {{ user }}</h2>
+    <h2 style="color:#b30000">Added by: {{ user }}</h2>
     <p class="tracks_table">
           {% if tracks %}
             <tr>
