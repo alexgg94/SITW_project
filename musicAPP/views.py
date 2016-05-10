@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework.reverse import reverse
-
+from django.contrib.auth.decorators import login_required
+from django.core.exceptions import PermissionDenied
 from django.utils import timezone
 from django.core import serializers
 from django.core.urlresolvers import reverse_lazy
@@ -8,9 +9,10 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView, ListView, DeleteView
 from django.views.generic.base import TemplateResponseMixin
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from django.utils.decorators import method_decorator
 
 from rest_framework import generics, permissions
 
@@ -40,6 +42,21 @@ class ConnegResponseMixin(TemplateResponseMixin):
                 return self.render_xml_object_response(objects=objects)
 
         return super(ConnegResponseMixin, self).render_to_response(context)
+
+class LoginRequiredMixin(object):
+    @method_decorator(login_required())
+    def dispatch(self, *args, **kwargs):
+        return super(LoginRequiredMixin, self).dispatch(*args, **kwargs)
+
+class CheckIsOwnerMixin(object):
+    def get_object(self, *args, **kwargs):
+        obj = super(CheckIsOwnerMixin, self).get_object(*args, **kwargs)
+        if not obj.user == self.request.user:
+            raise PermissionDenied
+        return obj
+
+class LoginRequiredCheckIsOwnerUpdateView(LoginRequiredMixin, CheckIsOwnerMixin, UpdateView):
+    template_name = 'form.html'
 
 class ArtistList(ListView, ConnegResponseMixin):
     model = Artist
@@ -82,7 +99,7 @@ class TrackDetail(DetailView, ConnegResponseMixin):
         context['RATING_CHOICES'] = TrackReview.RATING_CHOICES
         return context
 
-class CreateArtist(CreateView):
+class CreateArtist(LoginRequiredMixin, CreateView):
     model = Artist
     template_name = 'form.html'
     form_class = ArtistForm
@@ -91,7 +108,7 @@ class CreateArtist(CreateView):
         form.instance.user = self.request.user
         return super(CreateArtist, self).form_valid(form)
 
-class CreateAlbum(CreateView):
+class CreateAlbum(LoginRequiredMixin, CreateView):
     model = Album
     template_name = 'form.html'
     form_class = AlbumForm
@@ -100,7 +117,7 @@ class CreateAlbum(CreateView):
         form.instance.user = self.request.user
         return super(CreateAlbum, self).form_valid(form)
 
-class CreateTrack(CreateView):
+class CreateTrack(LoginRequiredMixin, CreateView):
     model = Track
     template_name = 'form.html'
     form_class = TrackForm
@@ -109,15 +126,15 @@ class CreateTrack(CreateView):
         form.instance.user = self.request.user
         return super(CreateTrack, self).form_valid(form)
 
-class DeleteArtist(DeleteView):
+class DeleteArtist(LoginRequiredMixin, CheckIsOwnerMixin, DeleteView):
     model = Artist
     success_url = reverse_lazy('musicapp:artist_list', kwargs={'extension': 'html'})
 
-class DeleteAlbum(DeleteView):
+class DeleteAlbum(LoginRequiredMixin, CheckIsOwnerMixin, DeleteView):
     model = Album
     success_url = reverse_lazy('musicapp:artist_list', kwargs={'extension': 'html'})
 
-class DeleteTrack(DeleteView):
+class DeleteTrack(LoginRequiredMixin, CheckIsOwnerMixin, DeleteView):
     model = Track
     success_url = reverse_lazy('musicapp:artist_list', kwargs={'extension': 'html'})
 
@@ -146,37 +163,37 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
         # Instance must have an attribute named `owner`.
         return obj.user == request.user
 
-class APIArtistList(generics.ListCreateAPIView):
+class APIArtistList(LoginRequiredMixin, generics.ListCreateAPIView):
     permission_classes = (IsOwnerOrReadOnly,)
     model = Artist
     queryset = Artist.objects.all()
     serializer_class = ArtistSerializer
 
-class APIArtistDetail(generics.RetrieveUpdateDestroyAPIView):
+class APIArtistDetail(LoginRequiredMixin, generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsOwnerOrReadOnly,)
     model = Artist
     queryset = Artist.objects.all()
     serializer_class = ArtistSerializer
 
-class APIAlbumList(generics.ListCreateAPIView):
+class APIAlbumList(LoginRequiredMixin, generics.ListCreateAPIView):
     permission_classes = (IsOwnerOrReadOnly,)
     model = Album
     queryset = Album.objects.all()
     serializer_class = AlbumSerializer
 
-class APIAlbumDetail(generics.RetrieveUpdateDestroyAPIView):
+class APIAlbumDetail(LoginRequiredMixin, generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsOwnerOrReadOnly,)
     model = Album
     queryset = Album.objects.all()
     serializer_class = AlbumSerializer
 
-class APITrackList(generics.ListCreateAPIView):
+class APITrackList(LoginRequiredMixin, generics.ListCreateAPIView):
     permission_classes = (IsOwnerOrReadOnly,)
     model = Track
     queryset = Track.objects.all()
     serializer_class = TrackSerializer
 
-class APITrackDetail(generics.RetrieveUpdateDestroyAPIView):
+class APITrackDetail(LoginRequiredMixin, generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsOwnerOrReadOnly,)
     model = Track
     queryset = Track.objects.all()

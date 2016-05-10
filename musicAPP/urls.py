@@ -32,9 +32,8 @@ urlpatterns = [
 
     # Edit Artist, ex.: /musicAPP/artists/1/edit.html
     url(r'^artists/(?P<pk>\d+)/edit.html$',
-        UpdateView.as_view(
+        LoginRequiredCheckIsOwnerUpdateView.as_view(
             model=Artist,
-            template_name = "form.html",
             form_class = ArtistForm),
         name='artist_edit'),
 
@@ -60,9 +59,8 @@ urlpatterns = [
 
     # Edit Album, ex.: /musicAPP/albums/1/edit.html
     url(r'^albums/(?P<pk>\d+)/edit.html$',
-        UpdateView.as_view(
+        LoginRequiredCheckIsOwnerUpdateView.as_view(
             model=Album,
-            template_name = "form.html",
             form_class = AlbumForm),
         name='album_edit'),
 
@@ -88,9 +86,8 @@ urlpatterns = [
 
     # Edit Track, ex.: /musicAPP/tracks/1/edit.html
     url(r'^tracks/(?P<pk>\d+)/edit.html$',
-        UpdateView.as_view(
+        LoginRequiredCheckIsOwnerUpdateView.as_view(
             model=Track,
-            template_name = "form.html",
             form_class = TrackForm),
         name='track_edit'),
 
@@ -99,13 +96,8 @@ urlpatterns = [
     DeleteTrack.as_view(),
     name='track_delete'),
 
-    # User login: /musicAPP/login
-    url(r'^login$', 'django.contrib.auth.views.login', name='login'),
-
-    # User logout: /musicAPP/logout
-    url(r'^logout$', 'django.contrib.auth.views.logout', {'next_page': '/musicAPP'}),
 
     #RESTfull API URLs------------------------
-    url(r'api/', include('musicAPP.urls_api'))
+    url(r'api/', include('musicAPP.urls_api')),
 
 ]

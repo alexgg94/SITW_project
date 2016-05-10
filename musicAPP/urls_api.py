@@ -10,7 +10,7 @@ from forms import *
 from views import *
 
 
-urlpatterns = patterns('',
+urlpatterns = [
     #RESTfull API URLs------------------------
         url(r'^$',
             TemplateView.as_view(template_name="home_page_api.html"),
@@ -34,8 +34,8 @@ urlpatterns = patterns('',
             APITrackList.as_view(), name='track-list'),
         #Tracks detail ex.:/tracks/1/
         url(r'^tracks/(?P<pk>\d+)/$',
-            APITrackDetail.as_view(), name='track-detail'),
+            APITrackDetail.as_view(), name='track-detail')
 
-)
+]
 
 urlpatterns = format_suffix_patterns(urlpatterns, allowed=['api', 'xml', 'json'])

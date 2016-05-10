@@ -35,7 +35,7 @@ class Album(models.Model):
 class Track(models.Model):
     track_name = models.CharField(max_length=50)
     artists = models.ForeignKey('Artist')
-    album = models.ForeignKey('Album')
+    album = models.ForeignKey('Album', related_name='tracks')
     spotifyLink = models.URLField(blank=True, null=True)
     user = models.ForeignKey(User, default=1)
 

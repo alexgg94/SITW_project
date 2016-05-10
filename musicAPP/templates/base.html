@@ -18,9 +18,9 @@
     {% block sidebar %}
     <button id='Home' type='submit' onclick="window.location.href='/musicAPP'">Home</button>
     {% if user.is_authenticated %}
-    <button id='Logout' type='submit' onclick="window.location.href='/musicAPP/logout'">Logout</button>
+    <button id='Logout' type='submit' onclick="window.location.href='/accounts/logout/?next={{request.path}}'">Logout</button>
     {% else %}
-    <button id='Login' type='submit' onclick="window.location.href='/musicAPP/login'">Login</button>
+    <button id='Login' type='submit' onclick="window.location.href='/accounts/login/?next={{request.path}}'">Login</button>
     {% endif %}
     <b> User: {{ user }}</b>
   </p>

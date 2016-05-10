@@ -20,5 +20,11 @@ from django.views.generic.base import RedirectView
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^musicAPP/',	include('musicAPP.urls',	namespace='musicapp')),
-    url(r'^$', RedirectView.as_view(url=reverse_lazy('musicapp:home_page'), permanent=True))
+    url(r'^$', RedirectView.as_view(url=reverse_lazy('musicapp:home_page'), permanent=True)),
+
+    # User login: /accounts/login
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login', name='login'),
+
+    # User logout: /accounts/logout
+    url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/musicAPP'}),
 ]
