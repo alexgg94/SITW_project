@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
+    <button type='submit' onclick="window.location.href='/musicAPP/artists/{{ artist.pk }}.json'">View in JSON</button>
+    <button type='submit' onclick="window.location.href='/musicAPP/artists/{{ artist.pk }}.xml'">View in XML</button>
+    <br></br>
     {% if user.is_authenticated and artist.user == user or user.is_superuser%}
       <button type='submit' onclick="window.location.href='/musicAPP/artists/{{ artist.pk }}/edit.html'">Edit</button>
       <button type='submit' onclick="window.location.href='/musicAPP/artists/{{ artist.pk }}/delete.html'">Delete</button>
     {% endif %}
+
     <h1>{{ artist.artist_name }}</h1>
+    <h2>Country: {{ artist.country }}</h2>
     <h2>Popularity: {{ artist.popularity }}</h2>
     <h2>Spotify Link: <a title='{{ artist.spotifyLink }} Link'
            href='{{ artist.spotifyLink }}'> {{ artist.spotifyLink }} </a></h2>
