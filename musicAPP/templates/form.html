@@ -21,7 +21,7 @@
                               {
                                 response( $.map( data_received["artists"]["items"], function( item )
                                   {
-                                    return{value : item.name, link : item.external_urls["spotify"]}
+                                    return{value : item.name, link : item.external_urls["spotify"], popularity : item.popularity}
                                   }))
                               }
                      });
@@ -32,6 +32,7 @@
                           if	(ui.item)
                                   {
                                     $("#id_spotifyLink").val(ui.item.link);
+                                    $("#id_popularity").val(ui.item.popularity);
                                   }
                          }
              });
@@ -90,7 +91,7 @@
          });
      </script>
 
-
+{% if user.is_authenticated and artist.user == user or album.user == user or track.user == user or user.is_superuser %}
     <form method="post" enctype="multipart/form-data" action="">
         {% csrf_token %}
         <table>
@@ -98,5 +99,10 @@
         </table>
         <input type="submit" value="Submit"/>
     </form>
+
+{% else %}
+  <h2>You don't have rights to access the demanded page</h2>
+  <button type='submit' onclick="window.location.href='/musicAPP'">Go Back</button>
+{% endif %}
 
 {% endblock %}
