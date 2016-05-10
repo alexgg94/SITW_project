@@ -1,13 +1,16 @@
 from django.shortcuts import render
+from rest_framework.reverse import reverse
 
 from django.utils import timezone
 from django.core import serializers
-from django.core.urlresolvers import reverse, reverse_lazy
+from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView, ListView, DeleteView
 from django.views.generic.base import TemplateResponseMixin
 from django.views.generic.edit import CreateView
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 from rest_framework import generics, permissions
 
@@ -34,7 +37,7 @@ class ConnegResponseMixin(TemplateResponseMixin):
             if self.kwargs['extension'] == 'json':
                 return self.render_json_object_response(objects=objects)
             elif self.kwargs['extension'] == 'xml':
-                return self.render_xml_object_response(objects=objects)            
+                return self.render_xml_object_response(objects=objects)
 
         return super(ConnegResponseMixin, self).render_to_response(context)
 
@@ -132,6 +135,7 @@ def review(request, pk):
 """
 
 # RESTfull API views-----------------
+
 class IsOwnerOrReadOnly(permissions.BasePermission):
 
     def has_object_permission(self, request, view, obj):

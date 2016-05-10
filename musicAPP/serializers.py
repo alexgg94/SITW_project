@@ -15,7 +15,7 @@ class ArtistSerializer(HyperlinkedModelSerializer):
 
 class AlbumSerializer(HyperlinkedModelSerializer):
     uri = HyperlinkedIdentityField(view_name='musicapp:album-detail')
-    artists = HyperlinkedRelatedField(many=True, read_only=True, view_name='musicapp:artist-detail')
+    artists = HyperlinkedRelatedField(read_only=True, view_name='musicapp:artist-detail')
     user = CharField(read_only=True)
 
     class Meta:
@@ -24,9 +24,10 @@ class AlbumSerializer(HyperlinkedModelSerializer):
 
 class TrackSerializer(HyperlinkedModelSerializer):
     uri = HyperlinkedIdentityField(view_name='musicapp:track-detail')
-    artists = HyperlinkedRelatedField(many=True, read_only=True,
-                                        view_name='musicapp:artist-detail')
-    album = HyperlinkedIdentityField(view_name='musicapp:album-detail')
+    artists = HyperlinkedRelatedField(read_only=True, view_name='musicapp:artist-detail')
+    #artists = HyperlinkedRelatedField(many=True, read_only=True,
+    #                                    view_name='musicapp:artist-detail')
+    album = HyperlinkedRelatedField(read_only=True, view_name='musicapp:album-detail')
     user = CharField(read_only=True)
 
     class Meta:

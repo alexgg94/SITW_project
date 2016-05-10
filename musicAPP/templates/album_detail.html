@@ -10,7 +10,7 @@
     <h2>Release Date: {{ album.releaseDate }}</h2>
     <h2>Spotify Link: <a title='{{ album.spotifyLink }} Link'
            href='{{ album.spotifyLink }}'> {{ album.spotifyLink }} </a></h2>
-    <h2 style="color:#b30000">Added by: {{ user }}</h2>
+    <h2 style="color:#b30000">Added by: {{ album.user }}</h2>
     <p class="tracks_table">
           {% if tracks %}
             <tr>

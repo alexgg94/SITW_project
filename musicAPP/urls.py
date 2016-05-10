@@ -1,13 +1,15 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import patterns, url, include
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import UpdateView
 from django.views.generic.base import RedirectView, TemplateView
+
+from rest_framework.urlpatterns import format_suffix_patterns
 
 from models import *
 from forms import *
 from views import *
 
-urlpatterns = patterns('',
+urlpatterns = [
     # Home page
     url(r'^$',
         TemplateView.as_view(template_name="home_page.html"),
@@ -104,28 +106,6 @@ urlpatterns = patterns('',
     url(r'^logout$', 'django.contrib.auth.views.logout', {'next_page': '/musicAPP'}),
 
     #RESTfull API URLs------------------------
-    url(r'api/$',
-        TemplateView.as_view(template_name="home_page_api.html"),
-        name='home_page_api'),
-    #List Arists ex.:/api/artists/
-    url(r'^api/artists/$',
-        APIArtistList.as_view(), name='artist-list'),
-    #Arists details ex.:/api/artists/1/
-    url(r'^api/artists/(?P<pk>\d+)/$',
-        APIArtistDetail.as_view(), name='artist-detail'),
+    url(r'api/', include('musicAPP.urls_api'))
 
-    #List Albums ex.:/api/albums/
-    url(r'^api/albums/$',
-        APIAlbumList.as_view(), name='album-list'),
-    #Album details ex.:/api/albums/1/
-    url(r'^api/albums/(?P<pk>\d+)/$',
-        APIAlbumDetail.as_view(), name='album-detail'),
-
-    #List Tracks ex.:/api/tracks/
-    url(r'^api/tracks/$',
-        APITrackList.as_view(), name='track-list'),
-    #Tracks detail ex.:/api/tracks/1/
-    url(r'^api/tracks/(?P<pk>\d+)/$',
-        APITrackDetail.as_view(), name='track-detail'),
-
-)
+]
