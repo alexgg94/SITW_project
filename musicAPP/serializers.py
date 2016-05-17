@@ -11,7 +11,7 @@ class ArtistSerializer(HyperlinkedModelSerializer):
 
     class Meta:
         model = Artist
-        fields = ('uri', 'artist_name', 'country', 'popularity', 'spotifyLink', 'user', 'albums')
+        fields = ('uri', 'artist_name', 'country', 'popularity', 'image', 'spotifyLink', 'user', 'albums')
 
 class AlbumSerializer(HyperlinkedModelSerializer):
     uri = HyperlinkedIdentityField(view_name='musicapp:album-detail')
@@ -21,7 +21,7 @@ class AlbumSerializer(HyperlinkedModelSerializer):
 
     class Meta:
         model = Album
-        fields = ('uri', 'album_name', 'artists', 'releaseDate', 'spotifyLink', 'user', 'tracks')
+        fields = ('uri', 'album_name', 'artists', 'releaseDate', 'image', 'spotifyLink', 'user', 'tracks')
 
 class TrackSerializer(HyperlinkedModelSerializer):
     uri = HyperlinkedIdentityField(view_name='musicapp:track-detail')
@@ -31,4 +31,4 @@ class TrackSerializer(HyperlinkedModelSerializer):
 
     class Meta:
         model = Track
-        fields = ('uri', 'track_name', 'artists', 'album', 'spotifyLink', 'user', )
+        fields = ('uri', 'track_name', 'artists', 'album', 'image', 'spotifyLink', 'user', )
