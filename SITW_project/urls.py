@@ -16,6 +16,8 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic.base import RedirectView
+from django.views.static import serve
+from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -27,4 +29,6 @@ urlpatterns = [
 
     # User logout: /accounts/logout
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/musicAPP'}),
+
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT, }),
 ]

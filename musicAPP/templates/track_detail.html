@@ -9,6 +9,7 @@
 {% endif %}
 {% if track %}
     <h1>{{ track.track_name }}</h1>
+    <p><img src = "{{track.image}}" height="300" width="300"/> </p>
     <h2>Artist:<a href='/musicAPP/artists/{{ track.artists.pk }}.html'>{{ track.artists.artist_name }}</a></h2>
     <h2>Album: <a href='/musicAPP/albums/{{ track.album.pk }}.html'>{{ track.album.album_name }}</a></h2>
     <h2>Spotify Link: <a title='{{ track.spotifyLink }} Link'

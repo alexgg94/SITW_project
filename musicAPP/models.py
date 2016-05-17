@@ -11,7 +11,7 @@ class Artist(models.Model):
     popularity = models.IntegerField(blank=True)
     spotifyLink = models.URLField(blank=True, null=True)
     user = models.ForeignKey(User, default=1)
-    #image = models.ImageField()
+    image = models.CharField(max_length=200, default = "/media/artist.png", null=True)
 
     def __unicode__(self):
         return u"%s" % self.artist_name
@@ -25,6 +25,7 @@ class Album(models.Model):
     releaseDate = models.DateField(default=date.today)
     spotifyLink = models.URLField(blank=True, null=True)
     user = models.ForeignKey(User, default=1)
+    image = models.CharField(max_length=200, default = "/media/album.jpg", null=True)
 
     def __unicode__(self):
         return u"%s" % self.album_name
@@ -38,6 +39,7 @@ class Track(models.Model):
     album = models.ForeignKey('Album', related_name='tracks')
     spotifyLink = models.URLField(blank=True, null=True)
     user = models.ForeignKey(User, default=1)
+    image = models.CharField(max_length=200, default = "/media/track.jpg", null=True)
 
     def __unicode__(self):
         return u"%s" % self.track_name
