@@ -91,14 +91,7 @@
                               {
                                 response( $.map( data_received["tracks"]["items"], function( item )
                                   {
-                                    try
-                                       {
-                                        return{value : item.name, link : item.external_urls["spotify"], image : item.images[0]["url"]}
-                                       }
-                                   catch (e)
-                                       {
-                                        return{value : item.name, link : item.external_urls["spotify"], image : "/media/track.jpg"}
-                                       }
+                                   return{value : item.name, link : item.external_urls["spotify"]}
                                   }))
                               }
                      });
@@ -109,14 +102,13 @@
 								           if	(ui.item)
                                   {
                                    $("#id_spotifyLink").val(ui.item.link);
-                                   $("#id_image").val(ui.item.image);
 																	}
 												  }
              });
          });
      </script>
 
-{% if user.is_authenticated and artist.user == user or album.user == user or track.user == user or user.is_superuser %}
+{% if user.is_authenticated %}
     <form method="post" enctype="multipart/form-data" action="">
         {% csrf_token %}
         <table>
