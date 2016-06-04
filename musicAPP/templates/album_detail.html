@@ -8,30 +8,59 @@
   <button type='submit' onclick="window.location.href='/musicAPP/albums/{{ album.pk }}/delete.html'">Delete</button>
 {% endif %}
 {% if album %}
-    <h1>{{ album.album_name }}</h1>
-    <p><img src = "{{album.image}}" height="300" width="300"/> </p>
-    <h2>Artist:<a href='/musicAPP/artists/{{ album.artists.pk }}.html'>{{ album.artists.artist_name }}</a></h2>
-    <h2>Release Date: {{ album.releaseDate }}</h2>
-    <h2>Spotify Link: <a title='{{ album.spotifyLink }} Link'
-           href='{{ album.spotifyLink }}'> {{ album.spotifyLink }} </a></h2>
-    <h2 style="color:#b30000">Added by: {{ album.user }}</h2>
+    <span vocab="http://schema.org/" typeof="MusicAlbum">
+    <h1>
+      <span property="name">
+        {{ album.album_name }}
+      </span>
+    </h1>
+    <p hidden><span property ="image"> {{ album.image }}</span></p>
+    <p><img src = "{{album.image}}" height="300" width="300"/></p>
+    <h2>Artist:
+      <span property="creator">
+        <a href='/musicAPP/artists/{{ album.artists.pk }}.html'>
+          {{ album.artists.artist_name }}
+        </a>
+      </span>
+    </h2>
+    <h2>Release Date:
+      <span property="dateCreated">
+        {{ album.releaseDate }}
+      </span>
+    </h2>
+    <h2>Spotify Link:
+        <span rel="spotifyUrl" typeof="URL">
+        <span property="url">
+          <a title='{{ album.spotifyLink }} Link' href='{{ album.spotifyLink }}'>
+            {{ album.spotifyLink }}
+          </a>
+        </span>
+      </span>
+    </h2>
+    <h2 style="color:#b30000">Added by: <span property="publisher">{{ album.user }}</span></h2>
     <p class="tracks_table">
-          {% if tracks %}
-            <tr>
-                <h2>Albums' tracks</h2>
-            </tr>
-
+      {% if tracks %}
+        <tr>
+              <h2>Albums' tracks</h2>
+        </tr>
+        <span rel="tracks" typeof="MusicRecording">
             {% for track in tracks %}
+            <span property="name"><td>
                 <tr>
-                    <td><a title='{{ track.track_name }} Detail Page'
-                           href='/musicAPP/tracks/{{ track.pk }}.html'> {{ track.track_name }} </a>
+                        <a title='{{ track.track_name }} Detail Page'href='/musicAPP/tracks/{{ track.pk }}.html'>
+                            {{ track.track_name }}
+                        </a>
+
                     </td><br>
                 </tr>
+                </span>
             {% endfor %}
-          {% else %}
-            <tr> This album doesn't have tracks</tr>
-          {% endif %}
+        </span>
+        {% else %}
+          <tr><span proeprty="text"> This album doesn't have tracks</span></tr>
+      {% endif %}
 
     </p>
+    </span>
 {% endif %}
 {% endblock %}

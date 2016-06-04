@@ -7,30 +7,60 @@
       <button type='submit' onclick="window.location.href='/musicAPP/artists/{{ artist.pk }}/edit.html'">Edit</button>
       <button type='submit' onclick="window.location.href='/musicAPP/artists/{{ artist.pk }}/delete.html'">Delete</button>
     {% endif %}
+{% if artist %}
+  <span vocab="http://schema.org/" typeof="MusicGroup">
 
-    <h1>{{ artist.artist_name }}</h1>
-    <p><img src = "{{artist.image}}" height="300" width="300"/> </p>
-    <h2>Country: {{ artist.country }}</h2>
-    <h2>Popularity: {{ artist.popularity }}</h2>
-    <h2>Spotify Link: <a title='{{ artist.spotifyLink }} Link'
-           href='{{ artist.spotifyLink }}'> {{ artist.spotifyLink }} </a></h2>
-    <h2 style="color:#b30000">Added by: {{ artist.user }}</h2>
+    <h1>
+      <span property="name">
+        {{ artist.artist_name }}
+      </span>
+    </h1>
+    <p hidden>
+      <span property ="image">
+        {{ artist.image }}
+      </span>
+    </p>
+    <p>
+      <img src = "{{artist.image}}" height="300" width="300"/>
+    </p>
+    <h2>Country:
+      <span property="location">{{ artist.country }}
+      </span>
+    </h2>
+    <h2>Popularity:
+      <span property="seeks">
+        {{ artist.popularity }}
+      </span>
+    </h2>
+    <h2>Spotify Link:
+      <span property="url">
+        <a title='{{ artist.spotifyLink }} Link' href='{{ artist.spotifyLink }}'>
+           {{ artist.spotifyLink }}
+         </span>
+       </a>
+     </h2>
+    <h2 style="color:#b30000">Added by: <span property="owns">{{ artist.user }}</span></h2>
     <p class="albums_table">
            {% if albums %}
              <tr>
                  <h2>Artist's Albums</h2>
              </tr>
-
+             <span rel="albums" typeof="MusicAlbum">
              {% for album in albums %}
-                 <tr>
-                     <td><a title='{{ album.album_name }} Detail Page'
-                            href='/musicAPP/albums/{{ album.pk }}.html'> {{ album.album_name }} </a>
-                     </td><br>
-                 </tr>
+                 <tr><td>
+                   <span property="name">
+                     <a title='{{ album.album_name }} Detail Page' href='/musicAPP/albums/{{ album.pk }}.html'>
+                        {{ album.album_name }}
+                      </a>
+                    </span>
+                 </td><br></tr>
              {% endfor %}
+           </span>
            {% else %}
              <tr> This artist doesn't have albums</tr>
            {% endif %}
 
     </p>
+  </span>
+{% endif %}
 {% endblock %}
