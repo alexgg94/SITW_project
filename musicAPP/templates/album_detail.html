@@ -45,8 +45,8 @@
         </tr>
         <span rel="tracks" typeof="MusicRecording">
             {% for track in tracks %}
-            <span property="name"><td>
-                <tr>
+            <span property="name"><tr>
+                <td>
                         <a title='{{ track.track_name }} Detail Page'href='/musicAPP/tracks/{{ track.pk }}.html'>
                             {{ track.track_name }}
                         </a>

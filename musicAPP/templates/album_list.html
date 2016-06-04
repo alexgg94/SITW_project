@@ -9,16 +9,21 @@
         <h3>Login to create</h3>
     {% endif %}
     <br>
+    <span vocab="http://schema.org/" typeof="MusicAlbum">
     <table class="model_table">
         {% if album_list %}
-            <h3>Albums' Name</h3>
-            {% for album in album_list %}
-                <tr>
-                    <td><a title='{{ album.album_name }} Detail Page'
-                           href='/musicAPP/albums/{{ album.pk }}.html'> {{ album.album_name }} </a>
-                    </td>
-                </tr>
-            {% endfor %}
-        {% endif %}
+          <h3>Albums' Name</h3>
+              {% for album in album_list %}
+                  <tr>
+                      <td>
+                        <span property="name">
+                          <a title='{{ album.album_name }} Detail Page'
+                             href='/musicAPP/albums/{{ album.pk }}.html'> {{ album.album_name }} </a>
+                         </span>
+                      </td>
+                  </tr>
+              {% endfor %}
+      {% endif %}
     </table>
+    </span>
 {% endblock %}
