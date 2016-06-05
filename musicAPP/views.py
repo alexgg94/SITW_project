@@ -139,17 +139,38 @@ class DeleteTrack(LoginRequiredMixin, CheckIsOwnerMixin, DeleteView):
     success_url = reverse_lazy('musicapp:artist_list', kwargs={'extension': 'html'})
 
 
-"""
-def review(request, pk):
-    restaurant = get_object_or_404(Restaurant, pk=pk)
-    review = RestaurantReview(
+@login_required()
+def artist_review(request, pk):
+    artist = get_object_or_404(Artist, pk=pk)
+    review = ArtistReview(
         rating=request.POST['rating'],
         comment=request.POST['comment'],
         user=request.user,
-        restaurant=restaurant)
+        artist=artist)
     review.save()
-    return HttpResponseRedirect(reverse('myrestaurants:restaurant_detail', args=(restaurant.id,)))
-"""
+    return HttpResponseRedirect(reverse('musicapp:artist_detail', args=(artist.pk,'html')))
+
+@login_required()
+def album_review(request, pk):
+    album = get_object_or_404(Album, pk=pk)
+    review = AlbumReview(
+        rating=request.POST['rating'],
+        comment=request.POST['comment'],
+        user=request.user,
+        album=album)
+    review.save()
+    return HttpResponseRedirect(reverse('musicapp:album_detail', args=(album.pk,'html')))
+
+@login_required()
+def track_review(request, pk):
+    track = get_object_or_404(Track, pk=pk)
+    review = TrackReview(
+        rating=request.POST['rating'],
+        comment=request.POST['comment'],
+        user=request.user,
+        track=track)
+    review.save()
+    return HttpResponseRedirect(reverse('musicapp:track_detail', args=(track.pk,'html')))
 
 # RESTfull API views-----------------
 

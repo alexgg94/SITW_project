@@ -42,6 +42,11 @@ urlpatterns = [
     DeleteArtist.as_view(),
     name='artist_delete'),
 
+    # Create an artist review using a function, ex: /musicAPP/artists/1/reviews/create/
+    url(r'^artists/(?P<pk>\d+)/reviews/create/$',
+        artist_review,
+        name='artist_review_create'),
+
     # List albums: /musicAPP/albums.json
     url(r'^albums\.(?P<extension>(json|xml|html))$',
         AlbumList.as_view(),
@@ -68,6 +73,11 @@ urlpatterns = [
     url(r'^albums/(?P<pk>\d+)/delete.html$',
     DeleteAlbum.as_view(),
     name='album_delete'),
+
+    # Create an artist review using a function, ex: /musicAPP/albums/1/reviews/create/
+    url(r'^albums/(?P<pk>\d+)/reviews/create/$',
+    album_review,
+    name='album_review_create'),
 
     # List tracks: /musicAPP/tracks.json
     url(r'^tracks\.(?P<extension>(json|xml|html))$',
@@ -96,6 +106,10 @@ urlpatterns = [
     DeleteTrack.as_view(),
     name='track_delete'),
 
+    # Create an artist review using a function, ex: /musicAPP/tracks/1/reviews/create/
+    url(r'^tracks/(?P<pk>\d+)/reviews/create/$',
+        track_review,
+        name='track_review_create'),
 
     #RESTfull API URLs------------------------
     url(r'api/', include('musicAPP.urls_api')),

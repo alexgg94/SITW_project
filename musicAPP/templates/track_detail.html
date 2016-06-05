@@ -35,4 +35,50 @@
       </h2>
     <h2 style="color:#b30000" >Added by: {{ track.user }}</h2>
 {% endif %}
+
+
+<h2>Reviews</h2>
+{% if track.trackreview_set.all|length > 0 %}
+<span rel="aggregateRating">
+    <p typeof="AggregateRating">
+        Average rating <a style="color:#b30000"><strong><span property="ratingValue">{{ track.averageRating }}</span></strong></a>
+        {% with track.trackreview_set.all|length as reviewCount %}
+        from <span property="reviewCount">{{ reviewCount }}</span> review{{ reviewCount|pluralize }}
+        {% endwith %}
+    </p>
+</span>
+<ul rel="review">
+    {% for review in track.trackreview_set.all %}
+        <li typeof="Review">
+            <p style="color:#b30000" rel="reviewRating" typeof="Rating">
+                <span property="worstRating" content="{{ RATING_CHOICES.0.0 }}"></span>
+                <span property="ratingValue">{{ review.stringRating }}</span>
+                {% with RATING_CHOICES|last as best %}
+                <span property="bestRating" content="{{ best.0 }}"></span>
+                {% endwith %}
+            </p>
+            <ul typeof="ReviewData">
+              <p property="description">{{ review.comment }}</p>
+              <p>Created by <span property="author">{{ review.user }}</span> on
+                  <span property="datePublished" content="{{ review.date|date:'Y-m-d' }}">{{ review.date }}</span></p>
+            </ul>
+        </li>
+    {% endfor %}
+</ul>
+</span>
+{% endif %}
+
+<h3>Add Review</h3>
+<form action="{% url 'musicapp:track_review_create' track.pk %}" method="post">
+    {% csrf_token %}
+    Message: <textarea name="comment" id="comment" rows="4"></textarea>
+    <p>Rating:</p>
+    <p>{% for rate in RATING_CHOICES %}
+    <input type="radio" name="rating" id="rating{{ forloop.counter }}" value="{{ rate.0 }}" />
+    <label for="choice{{ forloop.counter }}">{{ rate.1 }}</label>
+    <br/>{% endfor %}
+    </p>
+    <input type="submit" value="Review" />
+</form>
+
 {% endblock %}

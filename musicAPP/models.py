@@ -17,7 +17,10 @@ class Artist(models.Model):
         return u"%s" % self.artist_name
     def get_absolute_url(self):
         return reverse('musicapp:artist_detail', kwargs={'pk': self.pk, 'extension': 'html'})
-
+    def averageRating(self):
+        ratingSum = sum([float(review.rating) for review in self.artistreview_set.all()])
+        reviewCount = self.artistreview_set.count()
+        return Review.RATING_CHOICES[int(ratingSum / reviewCount)-1][1]
 
 class Album(models.Model):
     album_name = models.CharField(max_length=100)
@@ -31,7 +34,10 @@ class Album(models.Model):
         return u"%s" % self.album_name
     def get_absolute_url(self):
         return reverse('musicapp:album_detail', kwargs={'pk': self.pk, 'extension': 'html'})
-
+    def averageRating(self):
+        ratingSum = sum([float(review.rating) for review in self.albumreview_set.all()])
+        reviewCount = self.albumreview_set.count()
+        return Review.RATING_CHOICES[int(ratingSum / reviewCount)-1][1]
 
 class Track(models.Model):
     track_name = models.CharField(max_length=50)
@@ -45,7 +51,10 @@ class Track(models.Model):
         return u"%s" % self.track_name
     def get_absolute_url(self):
         return reverse('musicapp:track_detail', kwargs={'pk': self.pk, 'extension': 'html'})
-
+    def averageRating(self):
+        ratingSum = sum([float(review.rating) for review in self.trackreview_set.all()])
+        reviewCount = self.trackreview_set.count()
+        return Review.RATING_CHOICES[int(ratingSum / reviewCount)-1][1]
 
 class Review(models.Model):
     RATING_CHOICES = ((1,'Horrible!'),(2,'Bad'),(3,'Good'),(4,'Love it!'))
@@ -54,6 +63,8 @@ class Review(models.Model):
     date = models.DateField(default=date.today)
     user = models.ForeignKey(User, default=1)
 
+    def stringRating(self):
+        return self.RATING_CHOICES[self.rating-1][1]
 
 class ArtistReview(Review):
     artist = models.ForeignKey(Artist)
