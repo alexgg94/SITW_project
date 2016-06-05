@@ -27,13 +27,11 @@
       </span>
     </h2>
     <h2>Spotify Link:
-      <span rel="spotifyUrl" typeof="URL">
-          <span property="url">
-            <a title='{{ track.spotifyLink }} Link'
-               href='{{ track.spotifyLink }}'> {{ track.spotifyLink }}
-            </a>
-          </span>
-      </span>
+        <span property="url">
+          <a title='{{ track.spotifyLink }} Link'href='{{ track.spotifyLink }}'>
+            {{ track.spotifyLink }}
+          </a>
+        </span>
       </h2>
     <h2 style="color:#b30000" >Added by: {{ track.user }}</h2>
 {% endif %}
