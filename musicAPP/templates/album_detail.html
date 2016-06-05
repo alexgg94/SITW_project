@@ -64,17 +64,17 @@
 
 
 <h2>Reviews</h2>
-{% if album.albumreview_set.all|length > 0 %}
+{% if album.albumsReviews.all|length > 0 %}
 <span rel="aggregateRating">
     <p typeof="AggregateRating">
         Average rating <a style="color:#b30000"><strong><span property="ratingValue">{{ album.averageRating }}</span></strong></a>
-        {% with album.albumreview_set.all|length as reviewCount %}
+        {% with album.albumsReviews.all|length as reviewCount %}
         from <span property="reviewCount">{{ reviewCount }}</span> review{{ reviewCount|pluralize }}
         {% endwith %}
     </p>
 </span>
 <ul rel="review">
-    {% for review in album.albumreview_set.all %}
+    {% for review in album.albumsReviews.all %}
         <li typeof="Review">
             <p style="color:#b30000" rel="reviewRating" typeof="Rating">
                 <span property="worstRating" content="{{ RATING_CHOICES.0.0 }}"></span>

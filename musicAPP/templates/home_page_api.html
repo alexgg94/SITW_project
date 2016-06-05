@@ -15,9 +15,17 @@
 <div id="content">
     {% block content %}
         {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-        <ul><h2><a href="/musicAPP/api/artists">Artist</a>
+        <ul><h2>
+          <a href="/musicAPP/api/artists">Artist</a>
           <a href="/musicAPP/api/albums">Albums</a>
-          <a href="/musicAPP/api/tracks">Tracks</a></h2></ul>
+          <a href="/musicAPP/api/tracks">Tracks</a>
+        </h2></ul>
+        <br>
+        <ul><h2>
+          <a href="/musicAPP/api/artistsReviews">Artist Reviews</a>
+          <a href="/musicAPP/api/albumsReviews">Albums Reviews</a>
+          <a href="/musicAPP/api/tracksReviews">Tracks Reviews</a>
+        </h2></ul>
     {% endblock %}
 </div>
 <div id="footer">{% block footer %}{% endblock %}</div>

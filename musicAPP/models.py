@@ -18,8 +18,8 @@ class Artist(models.Model):
     def get_absolute_url(self):
         return reverse('musicapp:artist_detail', kwargs={'pk': self.pk, 'extension': 'html'})
     def averageRating(self):
-        ratingSum = sum([float(review.rating) for review in self.artistreview_set.all()])
-        reviewCount = self.artistreview_set.count()
+        ratingSum = sum([float(review.rating) for review in self.artistsReviews.all()])
+        reviewCount = self.artistsReviews.count()
         return Review.RATING_CHOICES[int(ratingSum / reviewCount)-1][1]
 
 class Album(models.Model):
@@ -35,8 +35,8 @@ class Album(models.Model):
     def get_absolute_url(self):
         return reverse('musicapp:album_detail', kwargs={'pk': self.pk, 'extension': 'html'})
     def averageRating(self):
-        ratingSum = sum([float(review.rating) for review in self.albumreview_set.all()])
-        reviewCount = self.albumreview_set.count()
+        ratingSum = sum([float(review.rating) for review in self.albumsReviews.all()])
+        reviewCount = self.albumsReviews.count()
         return Review.RATING_CHOICES[int(ratingSum / reviewCount)-1][1]
 
 class Track(models.Model):
@@ -52,13 +52,13 @@ class Track(models.Model):
     def get_absolute_url(self):
         return reverse('musicapp:track_detail', kwargs={'pk': self.pk, 'extension': 'html'})
     def averageRating(self):
-        ratingSum = sum([float(review.rating) for review in self.trackreview_set.all()])
-        reviewCount = self.trackreview_set.count()
+        ratingSum = sum([float(review.rating) for review in self.tracksReviews.all()])
+        reviewCount = self.tracksReviews.count()
         return Review.RATING_CHOICES[int(ratingSum / reviewCount)-1][1]
 
 class Review(models.Model):
     RATING_CHOICES = ((1,'Horrible!'),(2,'Bad'),(3,'Good'),(4,'Love it!'))
-    rating = models.PositiveSmallIntegerField('Ratings (stars)', blank=False, default=3, choices=RATING_CHOICES)
+    rating = models.PositiveSmallIntegerField('Ratings (Feeling)', blank=False, default=3, choices=RATING_CHOICES)
     comment = models.TextField(blank=True, null=True)
     date = models.DateField(default=date.today)
     user = models.ForeignKey(User, default=1)
@@ -67,19 +67,19 @@ class Review(models.Model):
         return self.RATING_CHOICES[self.rating-1][1]
 
 class ArtistReview(Review):
-    artist = models.ForeignKey(Artist)
+    artist = models.ForeignKey(Artist, related_name='artistsReviews')
 
     def __unicode__(self):
         return u"%s - %s" % (self.rating, self.artist.artist_name)
 
 class AlbumReview(Review):
-    album = models.ForeignKey(Album)
+    album = models.ForeignKey(Album, related_name='albumsReviews')
 
     def __unicode__(self):
         return u"%s - %s" % (self.rating, self.album.album_name)
 
 class TrackReview(Review):
-    track = models.ForeignKey(Track)
+    track = models.ForeignKey(Track, related_name='tracksReviews')
 
     def __unicode__(self):
         return u"%s - %s" % (self.rating, self.track.track_name)
