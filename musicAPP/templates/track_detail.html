@@ -10,7 +10,8 @@
 {% if track %}
 <span vocab="http://schema.org/" typeof="MusicRecording">
     <h1><span property="name">{{ track.track_name }}</span></h1>
-    <p hidden><span property ="image"> {{ track.image }}</span></p>
+    <span property ="image" content =" {{ track.image }}"></span>
+
     <p><img src = "{{track.image}}" height="300" width="300"/> </p>
     <h2>Artist:
       <span property="byArtist">
@@ -41,7 +42,8 @@
 {% if track.trackreview_set.all|length > 0 %}
 <span rel="aggregateRating">
     <p typeof="AggregateRating">
-        Average rating <a style="color:#b30000"><strong><span property="ratingValue">{{ track.averageRating }}</span></strong></a>
+      Average rating <a style="color:#b30000"><strong>{{ track.averageRatingString }}</strong></a>
+      <span property="ratingValue" content="{{ track.averageRating }}">
         {% with track.trackreview_set.all|length as reviewCount %}
         from <span property="reviewCount">{{ reviewCount }}</span> review{{ reviewCount|pluralize }}
         {% endwith %}
@@ -52,12 +54,13 @@
         <li typeof="Review">
             <p style="color:#b30000" rel="reviewRating" typeof="Rating">
                 <span property="worstRating" content="{{ RATING_CHOICES.0.0 }}"></span>
-                <span property="ratingValue">{{ review.stringRating }}</span>
+                <span property="ratingValue" content="{{ review.rating }}"></span>
+                {{ review.stringRating }}
                 {% with RATING_CHOICES|last as best %}
                 <span property="bestRating" content="{{ best.0 }}"></span>
                 {% endwith %}
             </p>
-            <ul typeof="ReviewData">
+            <ul>
               <p property="description">{{ review.comment }}</p>
               <p>Created by <span property="author">{{ review.user }}</span> on
                   <span property="datePublished" content="{{ review.date|date:'Y-m-d' }}">{{ review.date }}</span></p>
@@ -65,7 +68,6 @@
         </li>
     {% endfor %}
 </ul>
-</span>
 {% endif %}
 
 <h3>Add Review</h3>
@@ -80,5 +82,6 @@
     </p>
     <input type="submit" value="Review" />
 </form>
+</span>
 
 {% endblock %}
