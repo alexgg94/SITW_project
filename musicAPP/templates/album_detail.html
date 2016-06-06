@@ -63,7 +63,7 @@
 
 
 <h2>Reviews</h2>
-{% if album.albumreview_set.all|length > 0 %}
+{% if album.albumsReviews.all|length > 0 %}
 <span rel="aggregateRating">
     <p typeof="AggregateRating">
       Average rating <a style="color:#b30000"><strong>{{ album.averageRatingString }}</strong></a>
@@ -74,7 +74,7 @@
     </p>
 </span>
 <ul rel="review">
-    {% for review in album.albumreview_set.all %}
+    {% for review in album.albumsReviews.all %}
         <li typeof="Review">
             <p style="color:#b30000" rel="reviewRating" typeof="Rating">
                 <span property="worstRating" content="{{ RATING_CHOICES.0.0 }}"></span>

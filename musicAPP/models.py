@@ -24,6 +24,7 @@ class Artist(models.Model):
     def averageRatingString(self):
         ratingSum = sum([float(review.rating) for review in self.artistreview_set.all()])
         reviewCount = self.artistreview_set.count()
+
         return Review.RATING_CHOICES[int(ratingSum / reviewCount)-1][1]
 
 class Album(models.Model):
@@ -70,7 +71,7 @@ class Track(models.Model):
 
 class Review(models.Model):
     RATING_CHOICES = ((1,'Horrible!'),(2,'Bad'),(3,'Good'),(4,'Love it!'))
-    rating = models.PositiveSmallIntegerField('Ratings (stars)', blank=False, default=3, choices=RATING_CHOICES)
+    rating = models.PositiveSmallIntegerField('Ratings (Feeling)', blank=False, default=3, choices=RATING_CHOICES)
     comment = models.TextField(blank=True, null=True)
     date = models.DateField(default=date.today)
     user = models.ForeignKey(User, default=1)
@@ -79,19 +80,19 @@ class Review(models.Model):
         return self.RATING_CHOICES[self.rating-1][1]
 
 class ArtistReview(Review):
-    artist = models.ForeignKey(Artist)
+    artist = models.ForeignKey(Artist, related_name='artistsReviews')
 
     def __unicode__(self):
         return u"%s - %s" % (self.rating, self.artist.artist_name)
 
 class AlbumReview(Review):
-    album = models.ForeignKey(Album)
+    album = models.ForeignKey(Album, related_name='albumsReviews')
 
     def __unicode__(self):
         return u"%s - %s" % (self.rating, self.album.album_name)
 
 class TrackReview(Review):
-    track = models.ForeignKey(Track)
+    track = models.ForeignKey(Track, related_name='tracksReviews')
 
     def __unicode__(self):
         return u"%s - %s" % (self.rating, self.track.track_name)

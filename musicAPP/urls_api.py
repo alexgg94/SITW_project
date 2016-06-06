@@ -7,7 +7,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 
 from models import *
 from forms import *
-from views import *
+from views_api import *
 
 
 urlpatterns = [
@@ -34,7 +34,28 @@ urlpatterns = [
             APITrackList.as_view(), name='track-list'),
         #Tracks detail ex.:/tracks/1/
         url(r'^tracks/(?P<pk>\d+)/$',
-            APITrackDetail.as_view(), name='track-detail')
+            APITrackDetail.as_view(), name='track-detail'),
+
+        #List Artists reviews ex.:/artistsReviews/
+        url(r'^artistsReviews/$',
+            APIArtistReviewList.as_view(), name='artist-review-list'),
+        #Artists review detail ex.:/artistsReviews/1/
+        url(r'^artistsReviews/(?P<pk>\d+)/$',
+            APIArtistReviewDetail.as_view(), name='artist-review-detail'),
+
+        #List Albums reviews ex.:/albumsReviews/
+        url(r'^albumsReviews/$',
+            APIAlbumReviewList.as_view(), name='album-review-list'),
+        #Albums review detail ex.:/albumsReviews/1/
+        url(r'^albumsReviews/(?P<pk>\d+)/$',
+            APIAlbumReviewDetail.as_view(), name='album-review-detail'),
+
+        #List Tracks reviews ex.:/tracksReviews/
+        url(r'^tracksReviews/$',
+            APITrackReviewList.as_view(), name='track-review-list'),
+        #Tracks review detail ex.:/tracksReviews/1/
+        url(r'^tracksReviews/(?P<pk>\d+)/$',
+            APITrackReviewDetail.as_view(), name='track-review-detail')
 
 ]
 

@@ -65,7 +65,7 @@
 {% endif %}
 
 <h2>Reviews</h2>
-{% if artist.artistreview_set.all|length > 0 %}
+{% if artist.artistsReviews.all|length > 0 %}
 <span rel="aggregateRating">
     <p typeof="AggregateRating">
         Average rating <a style="color:#b30000"><strong>{{ artist.averageRatingString }}</strong></a>
@@ -76,7 +76,7 @@
     </p>
 </span>
 <ul rel="review">
-    {% for review in artist.artistreview_set.all %}
+    {% for review in artist.artistsReviews.all %}
         <li typeof="Review">
             <p style="color:#b30000" rel="reviewRating" typeof="Rating">
                 <span property="worstRating" content="{{ RATING_CHOICES.0.0 }}"></span>
