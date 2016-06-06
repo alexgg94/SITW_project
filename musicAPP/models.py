@@ -15,17 +15,24 @@ class Artist(models.Model):
 
     def __unicode__(self):
         return u"%s" % self.artist_name
+
     def get_absolute_url(self):
         return reverse('musicapp:artist_detail', kwargs={'pk': self.pk, 'extension': 'html'})
-    def averageRating(self):
-        ratingSum = sum([float(review.rating) for review in self.artistreview_set.all()])
-        reviewCount = self.artistreview_set.count()
-        return int(ratingSum / reviewCount)
-    def averageRatingString(self):
-        ratingSum = sum([float(review.rating) for review in self.artistreview_set.all()])
-        reviewCount = self.artistreview_set.count()
 
+    def averageRating(self):
+        ratingSum = sum([float(review.rating) for review in self.artistsReviews.all()])
+        reviewCount = self.artistsReviews.count()
+        if reviewCount == 0:
+            return -1
+        return int(ratingSum / reviewCount)
+
+    def averageRatingString(self):
+        ratingSum = sum([float(review.rating) for review in self.artistsReviews.all()])
+        reviewCount = self.artistsReviews.count()
+        if reviewCount == 0:
+            return "Without reviews"
         return Review.RATING_CHOICES[int(ratingSum / reviewCount)-1][1]
+
 
 class Album(models.Model):
     album_name = models.CharField(max_length=100)
@@ -37,16 +44,24 @@ class Album(models.Model):
 
     def __unicode__(self):
         return u"%s" % self.album_name
+
     def get_absolute_url(self):
         return reverse('musicapp:album_detail', kwargs={'pk': self.pk, 'extension': 'html'})
+
     def averageRating(self):
-        ratingSum = sum([float(review.rating) for review in self.albumreview_set.all()])
-        reviewCount = self.albumreview_set.count()
+        ratingSum = sum([float(review.rating) for review in self.albumsReviews.all()])
+        reviewCount = self.albumsReviews.count()
+        if reviewCount == 0:
+            return -1
         return int(ratingSum / reviewCount)
+
     def averageRatingString(self):
-        ratingSum = sum([float(review.rating) for review in self.albumreview_set.all()])
-        reviewCount = self.albumreview_set.count()
+        ratingSum = sum([float(review.rating) for review in self.albumsReviews.all()])
+        reviewCount = self.albumsReviews.count()
+        if reviewCount == 0:
+            return "Without reviews"
         return Review.RATING_CHOICES[int(ratingSum / reviewCount)-1][1]
+
 
 class Track(models.Model):
     track_name = models.CharField(max_length=50)
@@ -58,16 +73,24 @@ class Track(models.Model):
 
     def __unicode__(self):
         return u"%s" % self.track_name
+
     def get_absolute_url(self):
         return reverse('musicapp:track_detail', kwargs={'pk': self.pk, 'extension': 'html'})
+
     def averageRating(self):
-        ratingSum = sum([float(review.rating) for review in self.trackreview_set.all()])
-        reviewCount = self.trackreview_set.count()
+        ratingSum = sum([float(review.rating) for review in self.tracksReviews.all()])
+        reviewCount = self.tracksReviews.count()
+        if reviewCount == 0:
+            return -1
         return int(ratingSum / reviewCount)
+
     def averageRatingString(self):
-        ratingSum = sum([float(review.rating) for review in self.trackreview_set.all()])
-        reviewCount = self.trackreview_set.count()
+        ratingSum = sum([float(review.rating) for review in self.tracksReviews.all()])
+        reviewCount = self.tracksReviews.count()
+        if reviewCount == 0:
+            return "Without reviews"
         return Review.RATING_CHOICES[int(ratingSum / reviewCount)-1][1]
+
 
 class Review(models.Model):
     RATING_CHOICES = ((1,'Horrible!'),(2,'Bad'),(3,'Good'),(4,'Love it!'))

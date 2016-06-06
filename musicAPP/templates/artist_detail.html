@@ -70,7 +70,7 @@
     <p typeof="AggregateRating">
         Average rating <a style="color:#b30000"><strong>{{ artist.averageRatingString }}</strong></a>
         <span property="ratingValue" content="{{ artist.averageRating }}">
-        {% with artist.artistreview_set.all|length as reviewCount %}
+        {% with artist.artistsReviews.all|length as reviewCount %}
         from <span property="reviewCount">{{ reviewCount }}</span> review{{ reviewCount|pluralize }}
         {% endwith %}
     </p>

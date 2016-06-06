@@ -45,7 +45,7 @@
 
       Average rating <a style="color:#b30000"><strong>{{ track.averageRatingString }}</strong></a>
       <span property="ratingValue" content="{{ track.averageRating }}">
-        {% with track.trackreview_set.all|length as reviewCount %}
+        {% with track.tracksReviews.all|length as reviewCount %}
 
         from <span property="reviewCount">{{ reviewCount }}</span> review{{ reviewCount|pluralize }}
         {% endwith %}

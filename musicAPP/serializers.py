@@ -8,36 +8,42 @@ class ArtistSerializer(HyperlinkedModelSerializer):
     #using from Album, the related_name of the artist column
     albums = HyperlinkedRelatedField(many=True, read_only=True, view_name='musicapp:album-detail')
     user = CharField(read_only=True)
+    averageRating = CharField(read_only=True)
+    averageRatingString = CharField(read_only=True)
     artistsReviews = HyperlinkedRelatedField(many=True, read_only=True, view_name='musicapp:artist-review-detail')
 
     class Meta:
         model = Artist
-        fields = ('uri', 'artist_name', 'country', 'popularity', 'image',
-                  'spotifyLink', 'user', 'albums', 'artistsReviews')
+        fields = ('uri', 'artist_name', 'country', 'popularity', 'image','spotifyLink',
+                  'user', 'albums', 'averageRating', 'averageRatingString', 'artistsReviews')
 
 class AlbumSerializer(HyperlinkedModelSerializer):
     uri = HyperlinkedIdentityField(view_name='musicapp:album-detail')
     artists = HyperlinkedRelatedField(read_only=True, view_name='musicapp:artist-detail')
     tracks = HyperlinkedRelatedField(many=True, read_only=True, view_name='musicapp:track-detail')
     user = CharField(read_only=True)
+    averageRating = CharField(read_only=True)
+    averageRatingString = CharField(read_only=True)
     albumsReviews = HyperlinkedRelatedField(many=True, read_only=True, view_name='musicapp:album-review-detail')
 
     class Meta:
         model = Album
-        fields = ('uri', 'album_name', 'artists', 'releaseDate', 'image',
-                  'spotifyLink', 'user', 'tracks', 'albumsReviews')
+        fields = ('uri', 'album_name', 'artists', 'releaseDate', 'image','spotifyLink',
+                  'user', 'tracks', 'averageRating', 'averageRatingString', 'albumsReviews')
 
 class TrackSerializer(HyperlinkedModelSerializer):
     uri = HyperlinkedIdentityField(view_name='musicapp:track-detail')
     artists = HyperlinkedRelatedField(read_only=True, view_name='musicapp:artist-detail')
     album = HyperlinkedRelatedField(read_only=True, view_name='musicapp:album-detail')
     user = CharField(read_only=True)
+    averageRating = CharField(read_only=True)
+    averageRatingString = CharField(read_only=True)
     tracksReviews = HyperlinkedRelatedField(many=True, read_only=True, view_name='musicapp:track-review-detail')
 
     class Meta:
         model = Track
-        fields = ('uri', 'track_name', 'artists', 'album', 'image',
-                  'spotifyLink', 'user', 'tracksReviews')
+        fields = ('uri', 'track_name', 'artists', 'album', 'image', 'spotifyLink',
+                  'user', 'averageRating', 'averageRatingString', 'tracksReviews')
 
 class ArtistReviewSerializer(HyperlinkedModelSerializer):
     uri = HyperlinkedIdentityField(view_name='musicapp:artist-review-detail')
