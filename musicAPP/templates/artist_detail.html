@@ -49,11 +49,12 @@
              <span rel="albums" typeof="MusicAlbum">
              {% for album in albums %}
                  <tr><td>
-                   <span property="name">
-                     <a title='{{ album.album_name }} Detail Page' href='/musicAPP/albums/{{ album.pk }}.html'>
-                        {{ album.album_name }}
-                      </a>
-                    </span>
+                     <span property="name">
+                        <a title='{{ album.album_name }} Detail Page' href='/musicAPP/albums/{{ album.pk }}.html'>
+                          {{ album.album_name }}
+                        </a>
+                      </span>
+                      <span property="url" content="/musicAPP/albums/{{ album.pk }}.html"></span>
                  </td><br></tr>
              {% endfor %}
            </span>
