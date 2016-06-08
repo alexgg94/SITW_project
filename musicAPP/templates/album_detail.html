@@ -41,8 +41,8 @@
         <tr>
               <h2>Albums' tracks</h2>
         </tr>
-        <span rel="tracks" typeof="MusicRecording">
             {% for track in tracks %}
+            <span rel="track">
             <span property="name"><tr>
                 <td>
                         <a title='{{ track.track_name }} Detail Page'href='/musicAPP/tracks/{{ track.pk }}.html'>
@@ -53,8 +53,8 @@
                 </tr>
             </span>
             <span property="url" content="/musicAPP/tracks/{{ track.pk }}.html"></span>
+          </span>
             {% endfor %}
-        </span>
         {% else %}
           <tr><span proeprty="text"> This album doesn't have tracks</span></tr>
       {% endif %}

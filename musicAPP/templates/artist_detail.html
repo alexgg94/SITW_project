@@ -46,8 +46,8 @@
              <tr>
                  <h2>Artist's Albums</h2>
              </tr>
-             <span rel="albums" typeof="MusicAlbum">
              {% for album in albums %}
+                 <span rel="album">
                  <tr><td>
                      <span property="name">
                         <a title='{{ album.album_name }} Detail Page' href='/musicAPP/albums/{{ album.pk }}.html'>
@@ -56,8 +56,8 @@
                       </span>
                       <span property="url" content="/musicAPP/albums/{{ album.pk }}.html"></span>
                  </td><br></tr>
+               </span>
              {% endfor %}
-           </span>
            {% else %}
              <tr> This artist doesn't have albums</tr>
            {% endif %}
