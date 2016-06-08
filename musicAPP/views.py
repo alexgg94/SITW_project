@@ -141,35 +141,41 @@ class DeleteTrack(LoginRequiredMixin, CheckIsOwnerMixin, DeleteView):
 
 @login_required()
 def artist_review(request, pk):
-    artist = get_object_or_404(Artist, pk=pk)
-    review = ArtistReview(
-        rating=request.POST['rating'],
-        comment=request.POST['comment'],
-        user=request.user,
-        artist=artist)
-    review.save()
+    try:
+        artist = get_object_or_404(Artist, pk=pk)
+        review = ArtistReview(
+            rating=request.POST['rating'],
+            comment=request.POST['comment'],
+            user=request.user,
+            artist=artist)
+        review.save()
+    except:
+        pass
     return HttpResponseRedirect(reverse('musicapp:artist_detail', args=(artist.pk,'html')))
-
 @login_required()
 def album_review(request, pk):
-    album = get_object_or_404(Album, pk=pk)
-    review = AlbumReview(
-        rating=request.POST['rating'],
-        comment=request.POST['comment'],
-        user=request.user,
-        album=album)
-    review.save()
+    try:
+        album = get_object_or_404(Album, pk=pk)
+        review = AlbumReview(
+            rating=request.POST['rating'],
+            comment=request.POST['comment'],
+            user=request.user,
+            album=album)
+        review.save()
+    except:
+        pass
     return HttpResponseRedirect(reverse('musicapp:album_detail', args=(album.pk,'html')))
 
 @login_required()
 def track_review(request, pk):
-    track = get_object_or_404(Track, pk=pk)
-    review = TrackReview(
-        rating=request.POST['rating'],
-        comment=request.POST['comment'],
-        user=request.user,
-        track=track)
-    review.save()
+    try:
+        track = get_object_or_404(Track, pk=pk)
+        review = TrackReview(
+            rating=request.POST['rating'],
+            comment=request.POST['comment'],
+            user=request.user,
+            track=track)
+        review.save()
+    except:
+        pass
     return HttpResponseRedirect(reverse('musicapp:track_detail', args=(track.pk,'html')))
-
-# RESTfull API views-----------------
