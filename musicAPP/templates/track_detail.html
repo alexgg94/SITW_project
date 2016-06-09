@@ -14,17 +14,23 @@
 
     <p><img src = "{{track.image}}" height="300" width="300"/> </p>
     <h2>Artist:
-      <span property="byArtist">
+      <span property="byArtist" typeof="MusicGroup">
+        <span property="name">
           <a href='/musicAPP/artists/{{ track.artists.pk }}.html'>
               {{ track.artists.artist_name }}
           </a>
+        </span>
+        <span property="url" content="/musicAPP/artists/{{ track.artist.pk }}.html"></span>
       </span>
     </h2>
     <h2>Album:
-      <span property="inAlbum">
+      <span property="inAlbum" typeof="MusicAlbum">
+        <span property="name">
           <a href='/musicAPP/albums/{{ track.album.pk }}.html'>
               {{ track.album.album_name }}
           </a>
+        </span>
+        <span property="url" content="/musicAPP/albums/{{ track.album.pk }}.html"></span>
       </span>
     </h2>
     <h2>Spotify Link:

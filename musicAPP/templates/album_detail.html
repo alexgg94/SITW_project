@@ -17,10 +17,13 @@
     <span property ="image" content =" {{ album.image }}"></span>
     <p><img src = "{{album.image}}" height="300" width="300"/></p>
     <h2>Artist:
-      <span property="creator">
-        <a href='/musicAPP/artists/{{ album.artists.pk }}.html'>
-          {{ album.artists.artist_name }}
-        </a>
+      <span property="creator" typeof="MusicGroup">
+        <span property="name">
+          <a href='/musicAPP/artists/{{ album.artists.pk }}.html'>
+            {{ album.artists.artist_name }}
+          </a>
+        </span>
+        <span property="url" content="/musicAPP/artists/{{ album.artist.pk }}.html"></span>
       </span>
     </h2>
     <h2>Release Date:
